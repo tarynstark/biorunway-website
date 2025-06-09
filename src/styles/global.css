@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+/* BioRunway Color Palette */
+@theme {
+  --color-burgundy-50: #fbf5f5;
+  --color-burgundy-100: #f7edec;
+  --color-burgundy-200: #f0dbdb;
+  --color-burgundy-300: #e3bebe;
+  --color-burgundy-400: #d3999a;
+  --color-burgundy-500: #bf7476;
+  --color-burgundy-600: #a5555b;
+  --color-burgundy-700: #8c444c;
+  --color-burgundy-800: #763b42;
+  --color-burgundy-900: #66353d;
+  --color-burgundy-950: #371a1e;
+
+  --color-mustard-50: #fcf9f0;
+  --color-mustard-100: #f8f0dc;
+  --color-mustard-200: #f0deb8;
+  --color-mustard-300: #e7c78a;
+  --color-mustard-400: #dca75c;
+  --color-mustard-500: #d48f3b;
+  --color-mustard-600: #c67730;
+  --color-mustard-700: #a45e2a;
+  --color-mustard-800: #844b28;
+  --color-mustard-900: #6b3f23;
+  --color-mustard-950: #391f11;
+
+  --color-olive-50: #f9fbeb;
+  --color-olive-100: #eef5cc;
+  --color-olive-200: #e3ed9b;
+  --color-olive-300: #d8e262;
+  --color-olive-400: #d1d738;
+  --color-olive-500: #c8c82a;
+  --color-olive-600: #b7ab24;
+  --color-olive-700: #8a781e;
+  --color-olive-800: #736020;
+  --color-olive-900: #635020;
+  --color-olive-950: #392b0f;
+
+  --color-biorunway-50: #f7f7f6;
+  --color-biorunway-100: #e5e4e2;
+  --color-biorunway-200: #cac9c5;
+  --color-biorunway-300: #a8a7a0;
+  --color-biorunway-400: #85847c;
+  --color-biorunway-500: #6b6a61;
+  --color-biorunway-600: #54544d;
+  --color-biorunway-700: #454540;
+  --color-biorunway-800: #3a3935;
+  --color-biorunway-900: #32322f;
+  --color-biorunway-950: #161614;
+
+  --color-brand-main-burgundy: #8A3033;
+  --color-brand-main-mustard: #AD732D;
+  --color-brand-main-olive: #937900;
+  --color-brand-charcoal: #3D3D39;
+  --color-brand-light: #EFECDF;
+  --color-brand-silver: #CCCAC0;
+  --color-brand-dark: #161614;
+}
+
+/* BioRunway Brand Foundation */
+body {
+  color: var(--color-biorunway-800);
+  background-color: var(--color-brand-light);
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
