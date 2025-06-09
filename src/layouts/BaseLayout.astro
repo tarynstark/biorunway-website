@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description?: string;
@@ -16,7 +18,7 @@ const { title, description = "BioRunway - Where biotechnology meets fashion" } =
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="min-h-screen bg-white text-gray-900">
+  <body class="min-h-screen">
     <slot />
   </body>
 </html>
