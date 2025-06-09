@@ -1,10 +1,124 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<PageLayout title="About - BioRunway">
-  <div>
-    <h1 class="text-3xl font-bold mb-6">About BioRunway</h1>
-    <p class="text-lg">Content coming soon</p>
+<BaseLayout 
+  title="BioRunway | About us" 
+  description="BioRunway is an online resource for finding out the latest in biotechnology and fashion"
+>
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-main-burgundy mb-6">About BioRunway</h1>
+        <p class="text-xl text-biorunway-700 max-w-3xl mx-auto leading-relaxed">
+          BioRunway is an online resource for finding out the latest in biotechnology and fashion
+        </p>
+      </div>
+
+      <!-- Mission Statement -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-biorunway-900 mb-6">Our Mission</h2>
+        <div class="prose prose-lg max-w-none text-biorunway-700">
+          <p class="mb-6">
+            At BioRunway, we illuminate the revolutionary intersection where cutting-edge biotechnology meets the dynamic world of fashion. Our mission is to serve as the premier digital publication that decodes the complex landscape of bio-based materials, sustainable innovations, and technological breakthroughs reshaping how we create, consume, and think about fashion.
+          </p>
+          <p class="mb-6">
+            We bridge the gap between scientific advancement and industry application, delivering expert analysis that's both rigorous and accessible. From lab-grown leather to bio-engineered fibers, from startup spotlights to investment trends, we provide the insights that matter to industry professionals, investors, researchers, and conscious consumers alike.
+          </p>
+        </div>
+      </section>
+
+      <!-- Founders Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-biorunway-900 mb-8">Our Founders</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Joanna Bundus -->
+          <div class="text-center">
+            <div class="w-32 h-32 bg-biorunway-200 rounded-full mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold text-biorunway-900 mb-2">Joanna Bundus, PhD</h3>
+            <p class="text-biorunway-600 mb-4 font-medium">Co-founder</p>
+            <p class="text-biorunway-700 text-sm leading-relaxed">
+              Dr. Bundus brings deep scientific expertise and a passion for translating complex biotechnology innovations into accessible insights for industry stakeholders.
+            </p>
+          </div>
+
+          <!-- Aleksandra Masionis -->
+          <div class="text-center">
+            <div class="w-32 h-32 bg-biorunway-200 rounded-full mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold text-biorunway-900 mb-2">Aleksandra Masionis</h3>
+            <p class="text-biorunway-600 mb-4 font-medium">Co-founder</p>
+            <p class="text-biorunway-700 text-sm leading-relaxed">
+              Aleksandra combines industry experience with editorial expertise, ensuring BioRunway delivers content that resonates with both technical and business audiences.
+            </p>
+          </div>
+
+          <!-- Caitlin Nobes -->
+          <div class="text-center">
+            <div class="w-32 h-32 bg-biorunway-200 rounded-full mx-auto mb-4"></div>
+            <h3 class="text-xl font-bold text-biorunway-900 mb-2">Caitlin Nobes</h3>
+            <p class="text-biorunway-600 mb-4 font-medium">Co-founder</p>
+            <p class="text-biorunway-700 text-sm leading-relaxed">
+              Caitlin focuses on the intersection of sustainability and innovation, bringing critical analysis to the environmental impact of biotechnology in fashion.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advisory Council -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-biorunway-900 mb-8">Advisory Council</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- José Miguel Laplaza -->
+          <div class="flex items-start space-x-4">
+            <div class="w-20 h-20 bg-biorunway-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <h3 class="text-lg font-bold text-biorunway-900 mb-1">José Miguel Laplaza, PhD</h3>
+              <p class="text-biorunway-600 mb-2 text-sm font-medium">Advisory Council</p>
+              <p class="text-biorunway-700 text-sm leading-relaxed">
+                Dr. Laplaza provides strategic guidance on emerging biotechnologies and their commercial applications in the fashion industry.
+              </p>
+            </div>
+          </div>
+
+          <!-- Evelyn Rynkiewicz -->
+          <div class="flex items-start space-x-4">
+            <div class="w-20 h-20 bg-biorunway-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <h3 class="text-lg font-bold text-biorunway-900 mb-1">Evelyn Rynkiewicz</h3>
+              <p class="text-biorunway-600 mb-2 text-sm font-medium">Advisory Council</p>
+              <p class="text-biorunway-700 text-sm leading-relaxed">
+                Evelyn brings invaluable industry perspective and helps ensure our coverage reflects real-world market dynamics and trends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Cover -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-biorunway-900 mb-6">What We Cover</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold text-biorunway-800 mb-3">Products & Innovation</h3>
+            <p class="text-biorunway-700 mb-6">Latest product launches, material innovations, and breakthrough technologies reshaping fashion manufacturing.</p>
+            
+            <h3 class="text-xl font-semibold text-biorunway-800 mb-3">Research & Development</h3>
+            <p class="text-biorunway-700">Scientific discoveries, lab developments, and emerging technologies that will define the future of sustainable fashion.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-biorunway-800 mb-3">Sustainability & Impact</h3>
+            <p class="text-biorunway-700 mb-6">Environmental implications, lifecycle analyses, and the role of biotechnology in creating truly sustainable fashion.</p>
+            
+            <h3 class="text-xl font-semibold text-biorunway-800 mb-3">Investment & Market Trends</h3>
+            <p class="text-biorunway-700">Funding rounds, market analysis, and economic insights that drive decision-making in the biotech-fashion space.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </div>
-</PageLayout>
+</BaseLayout>

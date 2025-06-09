@@ -1,0 +1,64 @@
+---
+// Header component with clean, minimal navigation
+const base = import.meta.env.BASE_URL;
+---
+
+<header class="bg-brand-light border-b border-biorunway-200">
+  <div class="container mx-auto px-4 py-6">
+    <nav class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href={base} class="text-2xl font-bold text-brand-main-burgundy hover:text-burgundy-700 transition-colors">
+        BioRunway
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href={`${base}/articles/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          Articles
+        </a>
+        <a href={`${base}/about/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          About
+        </a>
+        <a href={`${base}/contact/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          Contact
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        class="md:hidden text-biorunway-700 hover:text-brand-main-burgundy transition-colors"
+        aria-label="Toggle mobile menu"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="md:hidden mt-4 hidden" id="mobile-menu">
+      <div class="flex flex-col space-y-4 pt-4 border-t border-biorunway-200">
+        <a href={`${base}/articles/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          Articles
+        </a>
+        <a href={`${base}/about/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          About
+        </a>
+        <a href={`${base}/contact/`} class="text-biorunway-700 hover:text-brand-main-mustard transition-colors font-medium">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Simple mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

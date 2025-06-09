@@ -1,11 +1,35 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Newsletter from '../components/sections/Newsletter.astro';
 ---
 
-<PageLayout title="BioRunway - Home">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-6">BioRunway</h1>
-    <p class="text-xl text-gray-600 mb-8">Where biotechnology meets fashion</p>
-    <p class="text-lg">Content coming soon</p>
-  </div>
-</PageLayout>
+<BaseLayout 
+  title="BioRunway | Products, partnerships, sustainability, R&D, investment news" 
+  description="Get information and in-depth news on biotech and fashion emergence."
+>
+  <Hero />
+  
+  <!-- Latest Articles Section Placeholder -->
+  <section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-biorunway-900 mb-4">
+          Latest Insights
+        </h2>
+        <p class="text-lg text-biorunway-600 max-w-2xl mx-auto">
+          Discover the latest trends and innovations at the intersection of biotechnology and fashion.
+        </p>
+      </div>
+      
+      <!-- Placeholder for article grid -->
+      <div class="text-center">
+        <p class="text-biorunway-500 italic">
+          Latest articles coming soon...
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <Newsletter />
+</BaseLayout>

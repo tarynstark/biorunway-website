@@ -1,0 +1,79 @@
+---
+// Newsletter signup component with professional editorial feel
+---
+
+<section class="bg-biorunway-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      
+      <!-- Headline -->
+      <h2 class="text-3xl md:text-4xl font-bold text-biorunway-900 mb-4">
+        Stay Ahead of the Curve
+      </h2>
+      
+      <!-- Subtitle -->
+      <p class="text-lg text-biorunway-600 mb-8 leading-relaxed">
+        Join industry leaders, innovators, and fashion forward thinkers. Get weekly insights delivered to your inbox.
+      </p>
+      
+      <!-- Newsletter Form -->
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" id="newsletter-form">
+        <div class="flex-1">
+          <label for="email" class="sr-only">Email address</label>
+          <input 
+            type="email" 
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            class="w-full px-4 py-3 rounded-lg border border-biorunway-300 bg-brand-light text-biorunway-800 placeholder-biorunway-400 focus:outline-none focus:border-brand-main-burgundy focus:ring-2 focus:ring-brand-main-burgundy focus:ring-opacity-20 transition-colors"
+            required
+          />
+        </div>
+        <button 
+          type="submit"
+          class="px-8 py-3 bg-brand-main-burgundy hover:bg-burgundy-700 text-brand-light font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-main-burgundy focus:ring-offset-2"
+        >
+          Subscribe
+        </button>
+      </form>
+      
+      <!-- Privacy Note -->
+      <p class="text-sm text-biorunway-500 mt-4">
+        We respect your privacy. Unsubscribe at any time.
+      </p>
+      
+      <!-- Success Message (hidden by default) -->
+      <div id="success-message" class="hidden mt-6 p-4 bg-olive-100 border border-olive-300 rounded-lg">
+        <p class="text-olive-800 font-medium">
+          Thank you for subscribing! Check your email to confirm your subscription.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<script>
+  // Handle newsletter form submission
+  const form = document.getElementById('newsletter-form');
+  const successMessage = document.getElementById('success-message');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Simulate form submission (replace with actual implementation)
+    const formData = new FormData(form);
+    const email = formData.get('email');
+    
+    if (email) {
+      // Show success message
+      successMessage?.classList.remove('hidden');
+      form.reset();
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+      }, 5000);
+    }
+  });
+</script>

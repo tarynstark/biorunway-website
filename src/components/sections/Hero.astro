@@ -1,0 +1,50 @@
+---
+// Hero component for homepage with editorial aesthetic
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="bg-brand-light py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      
+      <!-- Main Headline -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-main-burgundy mb-6 leading-tight">
+        Illuminating the fabrics of change:
+        <span class="block text-biorunway-800">the past, present, and future of biotech and fashion</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-biorunway-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+        Your go-to destination for biotech and fashion news and stories
+      </p>
+      
+      <!-- CTA Button -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a 
+          href={`${base}/articles/`}
+          class="inline-flex items-center px-8 py-4 bg-brand-main-mustard hover:bg-mustard-600 text-brand-light font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+        >
+          Read Latest Articles
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        
+        <a 
+          href={`${base}/about/`}
+          class="inline-flex items-center px-8 py-4 text-biorunway-700 hover:text-brand-main-burgundy font-semibold transition-colors"
+        >
+          Learn More
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Subtle decorative element -->
+  <div class="container mx-auto px-4 mt-16">
+    <div class="flex justify-center">
+      <div class="w-24 h-px bg-gradient-to-r from-transparent via-biorunway-300 to-transparent"></div>
+    </div>
+  </div>
+</section>
