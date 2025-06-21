@@ -1,0 +1,26 @@
+[
+  {
+    "id": "EMAIL-001",
+    "title": "Update EmailSignup component design to match site branding",
+    "description": "The email signup form needs visual design updates to match the BioRunway brand colors and styling. Currently uses basic styling.",
+    "priority": "medium",
+    "status": "backlog",
+    "tags": ["design", "ui", "branding"]
+  },
+  {
+    "id": "EMAIL-002", 
+    "title": "Re-enable RLS with proper public insert policy",
+    "description": "Supabase RLS was disabled for testing. Need to create a proper Row Level Security policy that allows public inserts to the General Email List table while maintaining security.",
+    "priority": "medium",
+    "status": "backlog",
+    "tags": ["security", "supabase", "database"]
+  },
+  {
+    "id": "EMAIL-003",
+    "title": "Add exception handling for duplicate email addresses", 
+    "description": "Currently duplicate emails may cause errors. Need to add proper handling to show user-friendly message when email already exists in database.",
+    "priority": "medium", 
+    "status": "backlog",
+    "tags": ["error-handling", "ux", "validation"]
+  }
+]
