@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
   style={{
     background: 'linear-gradient(0deg, #8C444C 0%, #8C444C 100%), var(--color-au-chico-950, #371A1E)',
     backgroundBlendMode: 'soft-light, color, normal, normal',
-    backgroundImage: `url(${base}images/biorunway-fabrics-hero-splash.png)`,
+    backgroundImage: `url('${base.endsWith('/') ? base : base + '/'}images/biorunway-fabrics-hero-splash.png')`,
     height: '640px'
   }}
 >
