@@ -1,6 +1,6 @@
 ---
 // Hero component with complex background and email signup integration
-import EmailSignup from '../EmailSignup.jsx';
+import HeroEmailSignup from '../HeroEmailSignup.jsx';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -27,28 +27,7 @@ const base = import.meta.env.BASE_URL;
       </div>
       
       <!-- Email Signup Form -->
-      <div class="w-full max-w-[360px] px-6 py-2.5 overflow-hidden rounded-[80px] justify-start items-start gap-2.5 inline-flex">
-        <div class="flex-1 py-1 pl-5 pr-1 bg-[rgba(251,245,245,0.24)] shadow-[0px_2px_3px_rgba(0,0,0,0.11)] overflow-hidden rounded-[100px] outline outline-1 outline-au-chico-600 outline-offset-[-1px] backdrop-blur-[5px] justify-between items-center flex">
-          <form class="w-full flex justify-between items-center">
-            <div class="self-stretch justify-center items-center gap-2.5 flex">
-              <input 
-                type="email" 
-                placeholder="Email Address"
-                class="text-cod-gray-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5 bg-transparent border-none outline-none placeholder:text-cod-gray-50"
-                required
-              />
-            </div>
-            <button 
-              type="submit"
-              class="px-3 py-1.5 bg-au-chico-950 overflow-hidden rounded-[80px] justify-center items-center gap-2.5 flex hover:bg-au-chico-900 transition-colors"
-            >
-              <span class="text-au-chico-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5">
-                Sign Up
-              </span>
-            </button>
-          </form>
-        </div>
-      </div>
+      <HeroEmailSignup client:load />
     </div>
   </div>
 </section>

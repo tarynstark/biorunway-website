@@ -40,7 +40,7 @@
     "title": "Create About section components with proper image handling",
     "description": "Build 'The Impact of Biotech' and 'Weaving the Future' sections with alternating image/text layout. Implement proper image positioning, rounded corners (80px), shadows, and responsive two-column layout matching Figma spacing and typography.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 5, 
     "tags": ["about", "images", "layout", "responsive", "shadows"]
   },
