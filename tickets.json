@@ -1,26 +1,137 @@
 [
   {
-    "id": "EMAIL-001",
-    "title": "Update EmailSignup component design to match site branding",
-    "description": "The email signup form needs visual design updates to match the BioRunway brand colors and styling. Currently uses basic styling.",
+    "id": "STYLE-001",
+    "title": "Set up design system CSS variables for BioRunway color palette",
+    "description": "Create CSS custom properties for the color system extracted from Figma: Au Chico palette (#fbf5f5, #f0dbdb, #a5555b, #66353d, #371a1e), Porsche palette (#f8f0dc, #f0deb8, #e7c78a, #dca75c, #d48f3b, #a45e2a, #391f11), and Cod Gray (#f7f7f6). Set up typography system for PP Pangaia and Inter fonts.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 1,
+    "tags": ["design-system", "css", "colors", "typography", "foundation"]
+  },
+  {
+    "id": "STYLE-002", 
+    "title": "Convert Figma gradient backgrounds to reusable CSS",
+    "description": "Replace inline SVG gradients with proper CSS radial gradients. Create reusable gradient utility classes for the white fade patterns used in section backgrounds.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 2,
+    "tags": ["gradients", "css", "backgrounds", "utilities"]
+  },
+  {
+    "id": "IA-001",
+    "title": "Update navigation to simplified structure", 
+    "description": "Consolidate navigation from 4 items (Home, Articles, About, Contact) to 3 items (Home, Articles, Sign Up). Update Header component with new navigation structure and styling to match Figma design with proper logo positioning and transparent overlay on hero.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 3,
+    "tags": ["navigation", "ia", "header", "design"]
+  },
+  {
+    "id": "IA-002",
+    "title": "Create Hero section with email signup integration",
+    "description": "Build hero section with dark background (#371a1e), centered content layout, headline styling (PP Pangaia Light Italic 48px), and integrated email signup form with backdrop blur effect matching Figma design exactly.",
+    "priority": "high",
+    "status": "backlog", 
+    "sequence": 4,
+    "tags": ["hero", "email-signup", "backdrop-blur", "typography"]
+  },
+  {
+    "id": "IA-003",
+    "title": "Create About section components with proper image handling",
+    "description": "Build 'The Impact of Biotech' and 'Weaving the Future' sections with alternating image/text layout. Implement proper image positioning, rounded corners (80px), shadows, and responsive two-column layout matching Figma spacing and typography.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 5, 
+    "tags": ["about", "images", "layout", "responsive", "shadows"]
+  },
+  {
+    "id": "IA-004",
+    "title": "Create Latest Articles grid section",
+    "description": "Build 3-column articles grid with image backgrounds, proper image cropping and positioning, rounded corners (20px), card shadows, and responsive layout. Include 'See All Articles' button with border styling.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 6,
+    "tags": ["articles", "grid", "cards", "images", "responsive"]
+  },
+  {
+    "id": "IA-005",
+    "title": "Create Founders showcase section",
+    "description": "Build founders section with 4-column grid layout (including Taryn Stark), placeholder image backgrounds (#e7c78a), proper card styling with borders, and responsive design for mobile/tablet.",
     "priority": "medium",
     "status": "backlog",
-    "tags": ["design", "ui", "branding"]
+    "sequence": 7,
+    "tags": ["founders", "team", "grid", "responsive"]
+  },
+  {
+    "id": "IA-006", 
+    "title": "Create Advisory Board section",
+    "description": "Build advisory board section with 2-column grid layout, differentiated background color (#f0deb8), smaller typography (24px heading vs 32px), and proper spacing below founders section.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 8,
+    "tags": ["advisory", "team", "grid", "responsive"]
+  },
+  {
+    "id": "IA-007",
+    "title": "Create Newsletter CTA section with background image",
+    "description": "Build 'Become an Insider' section with background image, backdrop blur form, centered layout, and integrated email signup matching the hero form styling but with different background treatment.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 9,
+    "tags": ["newsletter", "cta", "background-image", "signup"]
+  },
+  {
+    "id": "IA-008",
+    "title": "Create Footer with multi-column contact layout", 
+    "description": "Build footer with logo section, navigation columns (Explore, Follow Us, Contact), proper contact email organization, and dark background (#66353d) matching Figma design exactly.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 10,
+    "tags": ["footer", "contact", "layout", "social"]
+  },
+  {
+    "id": "RESPONSIVE-001",
+    "title": "Implement mobile breakpoints across all sections",
+    "description": "Add mobile responsive design for all sections: hero content stacking, single-column layouts for about sections, article grid responsive behavior, founders/advisory responsive grids, and proper mobile navigation.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 11,
+    "tags": ["mobile", "responsive", "breakpoints", "accessibility"]
+  },
+  {
+    "id": "CLEANUP-001",
+    "title": "Remove unused About and Contact page components",
+    "description": "Clean up codebase by removing About.astro and Contact.astro components, update routing, and ensure no broken links remain after homepage consolidation.",
+    "priority": "low",
+    "status": "backlog",
+    "sequence": 12,
+    "tags": ["cleanup", "routing", "maintenance"]
+  },
+  {
+    "id": "EMAIL-001",
+    "title": "Style email signup forms to match Figma design",
+    "description": "Update EmailSignup component with backdrop blur effect, proper border styling (#a5555b for hero, #d3999a for newsletter), button styling, and form validation states.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 13,
+    "tags": ["email", "forms", "styling", "validation"]
   },
   {
     "id": "EMAIL-002", 
     "title": "Re-enable RLS with proper public insert policy",
-    "description": "Supabase RLS was disabled for testing. Need to create a proper Row Level Security policy that allows public inserts to the General Email List table while maintaining security.",
-    "priority": "medium",
+    "description": "Supabase RLS was disabled for testing. Create proper Row Level Security policy that allows public inserts to the General Email List table while maintaining security.",
+    "priority": "low",
     "status": "backlog",
+    "sequence": 14,
     "tags": ["security", "supabase", "database"]
   },
   {
     "id": "EMAIL-003",
     "title": "Add exception handling for duplicate email addresses", 
-    "description": "Currently duplicate emails may cause errors. Need to add proper handling to show user-friendly message when email already exists in database.",
-    "priority": "medium", 
+    "description": "Add proper error handling to show user-friendly message when email already exists in database, with proper styling for error states.",
+    "priority": "low", 
     "status": "backlog",
+    "sequence": 15,
     "tags": ["error-handling", "ux", "validation"]
   }
 ]
