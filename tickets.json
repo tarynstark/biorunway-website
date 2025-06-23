@@ -133,5 +133,14 @@
     "status": "backlog",
     "sequence": 15,
     "tags": ["error-handling", "ux", "validation"]
+  },
+  {
+    "id": "TECH-001",
+    "title": "Consolidate design system to Tailwind theme configuration",
+    "description": "Migrate color system, typography, and spacing from CSS custom properties to proper Tailwind theme config. Upgrade to latest Tailwind CSS v4 features, create custom font family classes, and consolidate all design tokens into a unified system.",
+    "priority": "medium",
+    "status": "backlog", 
+    "sequence": 16,
+    "tags": ["tailwind", "design-system", "refactor", "upgrade", "fonts", "colors"]
   }
 ]
