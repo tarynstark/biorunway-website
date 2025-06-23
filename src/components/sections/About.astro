@@ -15,16 +15,19 @@ const base = import.meta.env.BASE_URL;
         
         <!-- The Impact of Biotech -->
         <div class="self-stretch p-4 justify-center items-center gap-10 inline-flex">
-          <div 
-            class="w-80 h-[400px] p-2.5 relative"
-            style={{
-              background: `linear-gradient(0deg, rgba(140, 68, 76, 0.40) 0%, rgba(140, 68, 76, 0.40) 100%), url('${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1A.png') lightgray 50% / cover no-repeat, var(--color-porsche-100, #F8F0DC)`,
-              backgroundBlendMode: 'color, normal, normal',
-              boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)',
-              borderRadius: '80px',
-              border: '1px solid var(--color-porsche-200, #F0DEB8)'
-            }}
-          ></div>
+          <div class="w-80 h-[400px] p-2.5 relative overflow-hidden rounded-[80px] border border-porsche-200"
+               style={{
+                 background: 'var(--color-porsche-100, #F8F0DC)',
+                 boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)'
+               }}>
+            <img 
+              src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1A.png`}
+              alt="The Impact of Biotech in Fashion"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-[rgba(140,68,76,0.40)] to-[rgba(140,68,76,0.40)]"
+                 style={{ mixBlendMode: 'color' }}></div>
+          </div>
           <div class="flex-1 p-4 overflow-hidden flex-col justify-start items-start gap-4 inline-flex">
             <div class="self-stretch text-au-chico-900 text-[32px] font-pangaia font-medium leading-10">
               The Impact of Biotech
@@ -51,16 +54,19 @@ const base = import.meta.env.BASE_URL;
               Its founders and contributors are passionate about exploring and understanding how cellular and molecular processes, natural sciences, and engineering collide to fashion our future.
             </div>
           </div>
-          <div 
-            class="w-80 h-[400px] p-2.5 relative"
-            style={{
-              background: `linear-gradient(0deg, #D48F3B 0%, #D48F3B 100%), url('${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1B.png') lightgray 50% / cover no-repeat, var(--color-porsche-100, #F8F0DC)`,
-              backgroundBlendMode: 'color, normal, normal',
-              boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)',
-              borderRadius: '80px',
-              border: '1px solid var(--color-porsche-200, #F0DEB8)'
-            }}
-          ></div>
+          <div class="w-80 h-[400px] p-2.5 relative overflow-hidden rounded-[80px] border border-porsche-200"
+               style={{
+                 background: 'var(--color-porsche-100, #F8F0DC)',
+                 boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)'
+               }}>
+            <img 
+              src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1B.png`}
+              alt="Weaving the Future of Fashion"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D48F3B] to-[#D48F3B] opacity-40"
+                 style={{ mixBlendMode: 'color' }}></div>
+          </div>
         </div>
         
       </div>
