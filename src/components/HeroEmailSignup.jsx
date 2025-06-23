@@ -44,7 +44,7 @@ export default function HeroEmailSignup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
-                className="text-cod-gray-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5 bg-transparent border-none outline-none placeholder:text-cod-gray-50 w-full"
+                className="text-cod-gray-50 text-[14px] font-sf-pro font-medium leading-5 bg-transparent border-none outline-none placeholder:text-cod-gray-50 w-full"
                 required
                 disabled={isLoading}
               />
@@ -54,7 +54,7 @@ export default function HeroEmailSignup() {
               disabled={isLoading || !email}
               className="px-3 py-1.5 bg-au-chico-950 overflow-hidden rounded-[80px] justify-center items-center gap-2.5 flex hover:bg-au-chico-900 transition-colors disabled:opacity-50"
             >
-              <span className="text-au-chico-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5">
+              <span className="text-au-chico-50 text-[14px] font-sf-pro font-medium leading-5">
                 {isLoading ? 'Signing Up...' : 'Sign Up'}
               </span>
             </button>
