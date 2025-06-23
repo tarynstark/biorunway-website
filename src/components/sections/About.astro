@@ -14,12 +14,12 @@ const base = import.meta.env.BASE_URL;
       <div class="w-full max-w-[1100px] px-10 py-12 flex-col justify-start items-start gap-4 flex">
         
         <!-- The Impact of Biotech -->
-        <div class="self-stretch p-4 flex-col lg:flex-row justify-center items-center gap-4 lg:gap-10 flex">
-          <!-- Desktop: Image Left, Mobile: Text First -->
-          <div class="order-2 lg:order-1 w-full lg:w-80 h-52 lg:h-[400px] p-2.5 relative overflow-hidden rounded-10 lg:rounded-[80px] border border-porsche-200"
+        <div class="self-stretch p-4 flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 flex">
+          <!-- Desktop: Image Left, Mobile: Image After Text -->
+          <div class="order-2 lg:order-1 w-full lg:w-80 h-[220px] lg:h-[400px] p-2.5 relative overflow-hidden rounded-[40px] lg:rounded-[80px] border border-porsche-200"
                style={{
                  background: 'var(--color-porsche-100, #F8F0DC)',
-                 boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)'
+                 boxShadow: '0px 0px 1px rgba(220, 214, 214, 0.98)'
                }}>
             <img 
               src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1A.png`}
@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL;
           </div>
           
           <!-- Desktop: Text Right, Mobile: Text First -->
-          <div class="order-1 lg:order-2 flex-1 p-4 overflow-hidden flex-col justify-start items-start gap-4 flex">
+          <div class="order-1 lg:order-2 flex-1 overflow-hidden flex-col justify-start items-start gap-4 flex">
             <div class="self-stretch text-au-chico-900 text-[32px] font-pangaia font-medium leading-10">
               The Impact of Biotech
             </div>
@@ -45,9 +45,9 @@ const base = import.meta.env.BASE_URL;
         </div>
         
         <!-- Weaving the Future -->
-        <div class="self-stretch p-4 overflow-hidden flex-col lg:flex-row justify-center items-center gap-4 lg:gap-10 flex">
+        <div class="self-stretch p-4 overflow-hidden flex-col lg:flex-row justify-center items-center gap-6 lg:gap-10 flex">
           <!-- Desktop: Text Left, Mobile: Text First -->
-          <div class="flex-1 p-4 overflow-hidden flex-col justify-start items-start gap-4 flex">
+          <div class="flex-1 overflow-hidden flex-col justify-start items-start gap-4 flex">
             <div class="self-stretch text-au-chico-900 text-[32px] font-pangaia font-medium leading-10">
               Weaving the Future
             </div>
@@ -60,10 +60,10 @@ const base = import.meta.env.BASE_URL;
           </div>
           
           <!-- Desktop: Image Right, Mobile: Image Second -->
-          <div class="w-full lg:w-80 h-52 lg:h-[400px] p-2.5 relative overflow-hidden rounded-10 lg:rounded-[80px] border border-porsche-200"
+          <div class="w-full lg:w-80 h-[220px] lg:h-[400px] p-2.5 relative overflow-hidden rounded-[40px] lg:rounded-[80px] border border-porsche-200"
                style={{
                  background: 'var(--color-porsche-100, #F8F0DC)',
-                 boxShadow: '-11px 12px 5px 0px rgba(220, 214, 214, 0.02), -7px 8px 4px 0px rgba(220, 214, 214, 0.15), -4px 4px 4px 0px rgba(220, 214, 214, 0.50), -2px 2px 3px 0px rgba(220, 214, 214, 0.85), 0px 0px 1px 0px rgba(220, 214, 214, 0.98)'
+                 boxShadow: '0px 0px 1px rgba(220, 214, 214, 0.98)'
                }}>
             <img 
               src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1B.png`}
