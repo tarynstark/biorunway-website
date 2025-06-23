@@ -1,0 +1,95 @@
+---
+// Latest Articles section matching Figma design exactly
+import { getCollection } from 'astro:content';
+
+// Get the latest 3 articles
+const allArticles = await getCollection('articles');
+const latestArticles = allArticles
+  .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime())
+  .slice(0, 3);
+
+const base = import.meta.env.BASE_URL;
+
+// Map slugs to display titles that match the Figma design
+const articleDisplayData = {
+  'what-why-who-biorunway': {
+    title: 'The Who, What, Why of BioRunway',
+    image: 'https://placehold.co/683x368'
+  },
+  'biodyes': {
+    title: 'Biodyes 101: The colorful future of fashion?',
+    image: 'https://placehold.co/750x750'
+  },
+  'glossary-of-terms': {
+    title: 'Knowledge Hub: Glossary of terms',
+    image: 'https://placehold.co/1024x1024'
+  }
+};
+---
+
+<section 
+  class="w-full h-full overflow-hidden justify-center items-center gap-2.5 inline-flex"
+  style={{
+    background: 'linear-gradient(0deg, #FFFCF6 0%, #FFFCF6 100%), white'
+  }}
+>
+  <div class="flex-1 max-w-[1100px] px-10 py-16 overflow-hidden border-l border-r border-au-chico-200 flex-col justify-start items-start gap-4 inline-flex">
+    <!-- Section Header -->
+    <div class="px-4 justify-center items-center gap-2.5 inline-flex">
+      <div class="text-au-chico-900 text-[32px] font-pangaia font-medium leading-10">
+        Latest Articles
+      </div>
+    </div>
+
+    <!-- Articles Stack -->
+    <div class="self-stretch p-4 flex-col justify-center items-center gap-6 flex">
+      {latestArticles.map((article, index) => {
+        const displayData = articleDisplayData[article.slug] || {
+          title: article.data.title,
+          image: 'https://placehold.co/600x400'
+        };
+        
+        return (
+          <div class="self-stretch bg-porsche-100 overflow-hidden rounded-[20px] border border-cod-gray-50 flex-col justify-center items-start flex" 
+               style={{ boxShadow: '0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25)' }}>
+            <!-- Article Image -->
+            <div class="self-stretch h-[200px] relative bg-porsche-100 overflow-hidden">
+              <img 
+                src={displayData.image}
+                alt={displayData.title}
+                class="absolute inset-0 w-full h-full object-cover"
+                style={article.slug === 'glossary-of-terms' ? {
+                  backgroundBlendMode: 'color, normal',
+                  background: 'linear-gradient(0deg, #ADA983 0%, #ADA983 100%)'
+                } : {}}
+              />
+            </div>
+            
+            <!-- Article Content -->
+            <div class="self-stretch p-6 bg-white overflow-hidden flex-col justify-start items-start gap-4 flex">
+              <div class="self-stretch text-porsche-950 text-[20px] font-pangaia font-medium leading-8" set:html={displayData.title}></div>
+              <a 
+                href={`${base}articles/${article.slug}/`}
+                class="self-stretch text-porsche-700 text-base font-sf-pro font-medium leading-6 hover:text-porsche-500 transition-colors"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- See All Articles Button -->
+    <div class="px-4 flex-col justify-start items-start gap-2.5 flex">
+      <div class="px-4 py-2 overflow-hidden rounded-[80px] border border-porsche-400 justify-center items-center gap-2.5 inline-flex">
+        <a 
+          href={`${base}articles/`}
+          class="text-porsche-500 text-base font-sf-pro font-normal leading-5 tracking-[0.48px] hover:text-porsche-700 transition-colors"
+        >
+          See All Articles
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

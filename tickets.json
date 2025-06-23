@@ -38,29 +38,29 @@
   {
     "id": "IA-003",
     "title": "Create About section components with proper image handling",
-    "description": "Build 'The Impact of Biotech' and 'Weaving the Future' sections with alternating image/text layout. Implement proper image positioning, rounded corners (80px), shadows, and responsive two-column layout matching Figma spacing and typography.",
+    "description": "Build 'The Impact of Biotech' and 'Weaving the Future' sections with alternating image/text layout. Implement proper image positioning, rounded corners (80px), shadows, and responsive two-column layout matching Figma spacing and typography. COMPLETED with exact Figma match, real images, responsive design, and professional styling.",
     "priority": "high",
     "status": "completed",
     "sequence": 5, 
-    "tags": ["about", "images", "layout", "responsive", "shadows"]
+    "tags": ["about", "images", "layout", "responsive", "shadows", "figma-exact"]
   },
   {
     "id": "IA-004",
     "title": "Create Latest Articles grid section",
-    "description": "Build 3-column articles grid with image backgrounds, proper image cropping and positioning, rounded corners (20px), card shadows, and responsive layout. Include 'See All Articles' button with border styling.",
+    "description": "Build 3-column articles grid with image backgrounds, proper image cropping and positioning, rounded corners (20px), card shadows, and responsive layout. Include 'See All Articles' button with border styling. COMPLETED with single-column stacked layout matching Figma exactly: #FFFCF6 background, Au Chico borders, Porsche color cards, specific article titles, and proper button styling with Porsche-400 border.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 6,
-    "tags": ["articles", "grid", "cards", "images", "responsive"]
+    "tags": ["articles", "grid", "cards", "images", "responsive", "design-system", "figma-exact"]
   },
   {
     "id": "IA-005",
     "title": "Create Founders showcase section",
-    "description": "Build founders section with 4-column grid layout (including Taryn Stark), placeholder image backgrounds (#e7c78a), proper card styling with borders, and responsive design for mobile/tablet.",
+    "description": "Build founders section with 4-column grid layout (including Taryn Stark), placeholder image backgrounds (#e7c78a), proper card styling with borders, and responsive design for mobile/tablet. COMPLETED with 4-column responsive grid, Taryn Stark and 3 other founders, porsche color placeholder backgrounds, proper card styling with 20px rounded corners, hover effects, and responsive breakpoints.",
     "priority": "medium",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 7,
-    "tags": ["founders", "team", "grid", "responsive"]
+    "tags": ["founders", "team", "grid", "responsive", "cards", "design-system"]
   },
   {
     "id": "IA-006", 
@@ -142,5 +142,23 @@
     "status": "backlog", 
     "sequence": 16,
     "tags": ["tailwind", "design-system", "refactor", "upgrade", "fonts", "colors"]
+  },
+  {
+    "id": "CONTENT-001",
+    "title": "Add real images to Latest Articles cards",
+    "description": "Replace placeholder images (placehold.co) with actual article images for: 'The Who, What, Why of BioRunway', 'Biodyes 101', and 'Knowledge Hub: Glossary of terms'. Ensure images are optimized for web, properly sized (683x368, 750x750, 1024x1024 respectively), and placed in public/images/articles/ directory.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 17,
+    "tags": ["content", "images", "articles", "optimization"]
+  },
+  {
+    "id": "TECH-002", 
+    "title": "Simplify URL routing to remove base path configuration",
+    "description": "Remove the complex base URL handling (BASE_URL environment variable) throughout the codebase to avoid conflicts with other Astro projects. Update all image references, links, and routing to use simple relative paths. This will eliminate the need for base path configuration and simplify deployment.",
+    "priority": "high",
+    "status": "backlog",
+    "sequence": 18,
+    "tags": ["routing", "simplification", "deployment", "configuration", "refactor"]
   }
 ]
