@@ -29,6 +29,15 @@
   font-display: swap;
 }
 
+/* Custom font classes for better browser compatibility */
+.font-pangaia {
+  font-family: 'PP Pangaia', 'Playfair Display', 'Times New Roman', 'Georgia', serif;
+}
+
+.font-sf-pro {
+  font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+}
+
 /* Enhanced fallbacks for cross-browser compatibility */
 .font-\[\'PP_Pangaia\'\],
 .font-\[PP_Pangaia\] {
@@ -38,19 +47,6 @@
 .font-\[\'SF_Pro_Rounded\'\],
 .font-\[SF_Pro_Rounded\] {
   font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
-}
-
-/* Safari-specific font loading improvements */
-@supports (-webkit-appearance: none) {
-  .font-\[\'PP_Pangaia\'\],
-  .font-\[PP_Pangaia\] {
-    font-family: -apple-system-ui-serif, 'Times New Roman', serif !important;
-  }
-  
-  .font-\[\'SF_Pro_Rounded\'\],
-  .font-\[SF_Pro_Rounded\] {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif !important;
-  }
 }
 
 /* BioRunway Color Palette */
