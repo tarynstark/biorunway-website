@@ -1,56 +1,54 @@
 ---
-// Hero component for homepage with editorial aesthetic
+// Hero component with complex background and email signup integration
 import EmailSignup from '../EmailSignup.jsx';
 const base = import.meta.env.BASE_URL;
 ---
 
-<section class="bg-brand-light py-16 md:py-24">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      
-      <!-- Main Headline -->
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-main-burgundy mb-6 leading-tight">
-        Illuminating the fabrics of change:
-        <span class="block text-biorunway-800">the past, present, and future of biotech and fashion</span>
-      </h1>
-      
-      <!-- Subtitle -->
-      <p class="text-xl md:text-2xl text-biorunway-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-        Your go-to destination for biotech and fashion news and stories
-      </p>
-      
-      <!-- Email Signup - Temporarily hidden -->
-      <!-- <div class="mb-8">
-        <EmailSignup client:load />
-      </div> -->
-      
-      <!-- CTA Button -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a 
-          href={`${base}/articles/`}
-          class="inline-flex items-center px-8 py-4 bg-brand-main-mustard hover:bg-mustard-600 text-brand-light font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
-        >
-          Read Latest Articles
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
-        
-        <a 
-          href={`${base}/about/`}
-          class="inline-flex items-center px-8 py-4 text-biorunway-700 hover:text-brand-main-burgundy font-semibold transition-colors"
-        >
-          Learn More
-        </a>
+<section 
+  class="w-full h-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden justify-center items-center gap-2.5 inline-flex"
+  style={{
+    background: 'linear-gradient(0deg, #8C444C 0%, #8C444C 100%), var(--color-au-chico-950, #371A1E)',
+    backgroundBlendMode: 'soft-light, color, normal, normal',
+    backgroundImage: `url(${base}images/biorunway-fabrics-hero-splash.png)`,
+    height: '640px'
+  }}
+>
+  <div class="flex-1 max-w-[1100px] px-10 py-40 overflow-hidden flex-col justify-start items-start gap-2.5 inline-flex">
+    <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+      <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+        <!-- Main Headline -->
+        <h1 class="self-stretch text-center text-au-chico-50 text-[48px] font-['PP_Pangaia'] italic font-light">
+          Illuminating the Fabrics of Change
+        </h1>
+        <!-- Subtitle -->
+        <p class="w-full max-w-[560px] text-center text-white text-[18px] font-['Inter'] font-medium leading-6">
+          The past, present, and future of biotech and fashion.
+        </p>
       </div>
       
-    </div>
-  </div>
-  
-  <!-- Subtle decorative element -->
-  <div class="container mx-auto px-4 mt-16">
-    <div class="flex justify-center">
-      <div class="w-24 h-px bg-gradient-to-r from-transparent via-biorunway-300 to-transparent"></div>
+      <!-- Email Signup Form -->
+      <div class="w-full max-w-[360px] px-6 py-2.5 overflow-hidden rounded-[80px] justify-start items-start gap-2.5 inline-flex">
+        <div class="flex-1 py-1 pl-5 pr-1 bg-[rgba(251,245,245,0.24)] shadow-[0px_2px_3px_rgba(0,0,0,0.11)] overflow-hidden rounded-[100px] outline outline-1 outline-au-chico-600 outline-offset-[-1px] backdrop-blur-[5px] justify-between items-center flex">
+          <form class="w-full flex justify-between items-center">
+            <div class="self-stretch justify-center items-center gap-2.5 flex">
+              <input 
+                type="email" 
+                placeholder="Email Address"
+                class="text-cod-gray-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5 bg-transparent border-none outline-none placeholder:text-cod-gray-50"
+                required
+              />
+            </div>
+            <button 
+              type="submit"
+              class="px-3 py-1.5 bg-au-chico-950 overflow-hidden rounded-[80px] justify-center items-center gap-2.5 flex hover:bg-au-chico-900 transition-colors"
+            >
+              <span class="text-au-chico-50 text-[14px] font-['SF_Pro_Rounded'] font-medium leading-5">
+                Sign Up
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </section>

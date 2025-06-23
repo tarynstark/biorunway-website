@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Fallback to system fonts for now - font files need to be added to public/fonts/ */
+@font-face {
+  font-family: 'PP Pangaia';
+  src: url('../fonts/PP-Pangaia-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Pangaia';
+  src: url('../fonts/PP-Pangaia-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('../fonts/SF-Pro-Rounded-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Temporary fallbacks until font files are added */
+.font-\[\'PP_Pangaia\'\] {
+  font-family: 'PP Pangaia', 'Times New Roman', serif !important;
+}
+
+.font-\[\'SF_Pro_Rounded\'\] {
+  font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
 /* BioRunway Color Palette */
 @theme {
   --color-burgundy-50: #fbf5f5;
