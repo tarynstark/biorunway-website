@@ -22,7 +22,7 @@
     "title": "Update navigation to simplified structure", 
     "description": "Consolidate navigation from 4 items (Home, Articles, About, Contact) to 3 items (Home, Articles, Sign Up). Update Header component with new navigation structure and styling to match Figma design with proper logo positioning and transparent overlay on hero.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 3,
     "tags": ["navigation", "ia", "header", "design"]
   },
@@ -31,7 +31,7 @@
     "title": "Create Hero section with email signup integration",
     "description": "Build hero section with dark background (#371a1e), centered content layout, headline styling (PP Pangaia Light Italic 48px), and integrated email signup form with backdrop blur effect matching Figma design exactly.",
     "priority": "high",
-    "status": "backlog", 
+    "status": "completed", 
     "sequence": 4,
     "tags": ["hero", "email-signup", "backdrop-blur", "typography"]
   },
