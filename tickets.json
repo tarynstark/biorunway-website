@@ -4,7 +4,7 @@
     "title": "Set up design system CSS variables for BioRunway color palette",
     "description": "Create CSS custom properties for the color system extracted from Figma: Au Chico palette (#fbf5f5, #f0dbdb, #a5555b, #66353d, #371a1e), Porsche palette (#f8f0dc, #f0deb8, #e7c78a, #dca75c, #d48f3b, #a45e2a, #391f11), and Cod Gray (#f7f7f6). Set up typography system for PP Pangaia and Inter fonts.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 1,
     "tags": ["design-system", "css", "colors", "typography", "foundation"]
   },
@@ -13,7 +13,7 @@
     "title": "Convert Figma gradient backgrounds to reusable CSS",
     "description": "Replace inline SVG gradients with proper CSS radial gradients. Create reusable gradient utility classes for the white fade patterns used in section backgrounds.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 2,
     "tags": ["gradients", "css", "backgrounds", "utilities"]
   },

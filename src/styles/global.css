@@ -57,6 +57,103 @@
   --color-brand-light: #EFECDF;
   --color-brand-silver: #CCCAC0;
   --color-brand-dark: #161614;
+
+  /* Figma Design Token Aliases 
+   * Note: Figma uses Au Chico/Porsche/Cod Gray naming, which maps to our 
+   * burgundy/mustard/biorunway palettes. All color values match exactly.
+   * Use either naming convention - they reference the same colors.
+   */
+  /* Au Chico palette (maps to burgundy) */
+  --color-au-chico-50: var(--color-burgundy-50);    /* #fbf5f5 */
+  --color-au-chico-100: var(--color-burgundy-100);  /* #f7edec */
+  --color-au-chico-200: var(--color-burgundy-200);  /* #f0dbdb */
+  --color-au-chico-300: var(--color-burgundy-300);  /* #e3bebe */
+  --color-au-chico-400: var(--color-burgundy-400);  /* #d3999a */
+  --color-au-chico-600: var(--color-burgundy-600);  /* #a5555b */
+  --color-au-chico-700: var(--color-burgundy-700);  /* #8c444c */
+  --color-au-chico-900: var(--color-burgundy-900);  /* #66353d */
+  --color-au-chico-950: var(--color-burgundy-950);  /* #371a1e */
+
+  /* Porsche palette (maps to mustard) */
+  --color-porsche-100: var(--color-mustard-100);    /* #f8f0dc */
+  --color-porsche-200: var(--color-mustard-200);    /* #f0deb8 */
+  --color-porsche-300: var(--color-mustard-300);    /* #e7c78a */
+  --color-porsche-400: var(--color-mustard-400);    /* #dca75c */
+  --color-porsche-500: var(--color-mustard-500);    /* #d48f3b */
+  --color-porsche-700: var(--color-mustard-700);    /* #a45e2a */
+  --color-porsche-950: var(--color-mustard-950);    /* #391f11 */
+
+  /* Sahara palette (maps to olive) */
+  --color-sahara-50: var(--color-olive-50);         /* #f9fbeb */
+  --color-sahara-100: var(--color-olive-100);       /* #eef5cc */
+  --color-sahara-200: var(--color-olive-200);       /* #e3ed9b */
+  --color-sahara-300: var(--color-olive-300);       /* #d8e262 */
+  --color-sahara-400: var(--color-olive-400);       /* #d1d738 */
+  --color-sahara-500: var(--color-olive-500);       /* #c8c82a */
+  --color-sahara-600: var(--color-olive-600);       /* #b7ab24 */
+  --color-sahara-700: var(--color-olive-700);       /* #8a781e */
+  --color-sahara-800: var(--color-olive-800);       /* #736020 */
+  --color-sahara-900: var(--color-olive-900);       /* #635020 */
+  --color-sahara-950: var(--color-olive-950);       /* #392b0f */
+
+  /* Cod Gray palette (maps to biorunway) */
+  --color-cod-gray-50: var(--color-biorunway-50);   /* #f7f7f6 */
+  --color-cod-gray-100: var(--color-biorunway-100); /* #e5e4e2 */
+  --color-cod-gray-200: var(--color-biorunway-200); /* #cac9c5 */
+  --color-cod-gray-300: var(--color-biorunway-300); /* #a8a7a0 */
+  --color-cod-gray-400: var(--color-biorunway-400); /* #85847c */
+  --color-cod-gray-500: var(--color-biorunway-500); /* #6b6a61 */
+  --color-cod-gray-600: var(--color-biorunway-600); /* #54544d */
+  --color-cod-gray-700: var(--color-biorunway-700); /* #454540 */
+  --color-cod-gray-800: var(--color-biorunway-800); /* #3a3935 */
+  --color-cod-gray-900: var(--color-biorunway-900); /* #32322f */
+  --color-cod-gray-950: var(--color-biorunway-950); /* #161614 */
+
+  /* Gradient Utilities */
+  --gradient-white-fade: radial-gradient(
+    ellipse 144px 124px at 0% 100%, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.9) 70%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  
+  --gradient-white-fade-alt: radial-gradient(
+    ellipse 144px 119px at 0% 100%, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.9) 70%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  --gradient-white-fade-center: radial-gradient(
+    circle at center, 
+    rgba(255, 255, 255, 0.8) 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Gradient Utility Classes */
+.bg-gradient-white-fade {
+  background-image: var(--gradient-white-fade);
+}
+
+.bg-gradient-white-fade-alt {
+  background-image: var(--gradient-white-fade-alt);
+}
+
+.bg-gradient-white-fade-center {
+  background-image: var(--gradient-white-fade-center);
+}
+
+/* Combined background utilities */
+.bg-white-with-fade {
+  background-color: white;
+  background-image: var(--gradient-white-fade);
+}
+
+.bg-white-with-fade-alt {
+  background-color: white;
+  background-image: var(--gradient-white-fade-alt);
 }
 
 /* BioRunway Brand Foundation */
