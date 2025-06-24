@@ -65,20 +65,20 @@
   {
     "id": "IA-006", 
     "title": "Create Advisory Board section",
-    "description": "Build advisory board section with 2-column grid layout, differentiated background color (#f0deb8), smaller typography (24px heading vs 32px), and proper spacing below founders section.",
+    "description": "Build advisory board section with 2-column grid layout, differentiated background color (#f0deb8), smaller typography (24px heading vs 32px), and proper spacing below founders section. COMPLETED with 2-column layout, Au-Chico-700 heading color, real names (José Miguel Laplaza PhD, Evelyn Rynkiewicz), gray placeholder images, and shared radial gradient background with Founders section.",
     "priority": "medium",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 8,
-    "tags": ["advisory", "team", "grid", "responsive"]
+    "tags": ["advisory", "team", "grid", "responsive", "figma-exact"]
   },
   {
     "id": "IA-007",
     "title": "Create Newsletter CTA section with background image",
-    "description": "Build 'Become an Insider' section with background image, backdrop blur form, centered layout, and integrated email signup matching the hero form styling but with different background treatment.",
+    "description": "Build 'Become an Insider' section with background image, backdrop blur form, centered layout, and integrated email signup matching the hero form styling but with different background treatment. COMPLETED with 'Become an Insider' heading, background image, backdrop blur form component, porsche color styling, and proper integration replacing old Newsletter section.",
     "priority": "medium",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 9,
-    "tags": ["newsletter", "cta", "background-image", "signup"]
+    "tags": ["newsletter", "cta", "background-image", "signup", "figma-exact"]
   },
   {
     "id": "IA-008",
@@ -160,5 +160,14 @@
     "status": "backlog",
     "sequence": 18,
     "tags": ["routing", "simplification", "deployment", "configuration", "refactor"]
+  },
+  {
+    "id": "EMAIL-004",
+    "title": "Improve email signup success message styling and messaging",
+    "description": "Update success message for email signup forms (both hero and newsletter) to provide better user feedback with improved styling, clearer messaging, and consistent design across both forms. Consider adding checkmark icon and better color contrast.",
+    "priority": "low",
+    "status": "backlog",
+    "sequence": 19,
+    "tags": ["email", "ux", "messaging", "styling", "forms"]
   }
 ]

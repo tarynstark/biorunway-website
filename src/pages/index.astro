@@ -4,7 +4,8 @@ import Hero from '../components/sections/Hero.astro';
 import About from '../components/sections/About.astro';
 import LatestArticles from '../components/sections/LatestArticles.astro';
 import Founders from '../components/sections/Founders.astro';
-import Newsletter from '../components/sections/Newsletter.astro';
+import AdvisoryBoard from '../components/sections/AdvisoryBoard.astro';
+import NewsletterCTA from '../components/sections/NewsletterCTA.astro';
 ---
 
 <BaseLayout 
@@ -14,6 +15,10 @@ import Newsletter from '../components/sections/Newsletter.astro';
   <Hero />
   <About />
   <LatestArticles />
-  <Founders />
-  <Newsletter />
+  <!-- Combined Founders and Advisory Board section with shared background -->
+  <div style="background: radial-gradient(ellipse 141.42% 161.66% at -0.00% 100.00%, white 0%, rgba(255, 255, 255, 0.90) 70%, rgba(255, 255, 255, 0) 100%);">
+    <Founders />
+    <AdvisoryBoard />
+  </div>
+  <NewsletterCTA />
 </BaseLayout>
