@@ -1,13 +1,12 @@
 ---
 // Header component with simplified navigation overlay
-const base = import.meta.env.BASE_URL;
 ---
 
 <header class="absolute top-0 left-0 right-0 z-50">
   <div class="max-w-[1100px] mx-auto px-10 py-3">
     <nav class="flex items-center justify-between">
       <!-- Logo -->
-      <a href={base} class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2">
         <!-- BioRunway Logo -->
         <div>
           <svg width="164" height="32" viewBox="0 0 164 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-au-chico-50">
@@ -20,14 +19,11 @@ const base = import.meta.env.BASE_URL;
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-4">
-        <a href={base} class="px-0 py-3 text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
+        <a href="/" class="px-0 py-3 text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
           Home
         </a>
-        <a href={`${base}articles/`} class="px-0 py-3 text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
+        <a href="/articles/" class="px-0 py-3 text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
           Articles
-        </a>
-        <a href="#signup" class="px-0 py-3 text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
-          Sign Up
         </a>
       </div>
       
@@ -46,14 +42,11 @@ const base = import.meta.env.BASE_URL;
     <!-- Mobile Navigation -->
     <div class="md:hidden mt-4 hidden" id="mobile-menu">
       <div class="flex flex-col space-y-4 pt-4 border-t border-au-chico-400/20">
-        <a href={base} class="text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
+        <a href="/" class="text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
           Home
         </a>
-        <a href={`${base}articles/`} class="text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
+        <a href="/articles/" class="text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
           Articles
-        </a>
-        <a href="#signup" class="text-[14px] font-semibold uppercase leading-6 text-au-chico-100 hover:text-au-chico-50 transition-colors">
-          Sign Up
         </a>
       </div>
     </div>

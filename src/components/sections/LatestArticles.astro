@@ -8,8 +8,6 @@ const latestArticles = allArticles
   .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime())
   .slice(0, 3);
 
-const base = import.meta.env.BASE_URL;
-
 // Map slugs to display titles that match the Figma design
 const articleDisplayData = {
   'what-why-who-biorunway': {
@@ -69,7 +67,7 @@ const articleDisplayData = {
             <div class="self-stretch p-6 bg-white overflow-hidden flex-col justify-start items-start gap-4 flex">
               <div class="self-stretch text-porsche-950 text-[20px] font-pangaia font-medium leading-8" set:html={displayData.title}></div>
               <a 
-                href={`${base}articles/${article.slug}/`}
+                href={`/articles/${article.slug}/`}
                 class="self-stretch text-porsche-700 text-base font-sf-pro-rounded font-medium leading-6 tracking-[0.32px] hover:text-porsche-500 transition-colors"
               >
                 Read More
@@ -84,7 +82,7 @@ const articleDisplayData = {
     <div class="px-4 flex-col justify-start items-start gap-2.5 flex">
       <div class="px-4 py-2 overflow-hidden rounded-[80px] border border-porsche-400 justify-center items-center gap-2.5 inline-flex">
         <a 
-          href={`${base}articles/`}
+          href="/articles/"
           class="text-porsche-500 text-base font-sf-pro font-normal leading-5 tracking-[0.48px] hover:text-porsche-700 transition-colors"
         >
           See All Articles

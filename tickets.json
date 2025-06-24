@@ -155,9 +155,9 @@
   {
     "id": "TECH-002", 
     "title": "Simplify URL routing to remove base path configuration",
-    "description": "Remove the complex base URL handling (BASE_URL environment variable) throughout the codebase to avoid conflicts with other Astro projects. Update all image references, links, and routing to use simple relative paths. This will eliminate the need for base path configuration and simplify deployment.",
+    "description": "Remove the complex base URL handling (BASE_URL environment variable) throughout the codebase to avoid conflicts with other Astro projects. Update all image references, links, and routing to use simple relative paths. This will eliminate the need for base path configuration and simplify deployment. COMPLETED: Removed BASE_URL usage from all components, updated Astro config to remove base path, simplified all routing to use relative paths.",
     "priority": "high",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 18,
     "tags": ["routing", "simplification", "deployment", "configuration", "refactor"]
   },
@@ -187,5 +187,14 @@
     "status": "backlog",
     "sequence": 21,
     "tags": ["design-system", "standardization", "layout", "spacing", "patterns", "maintainability"]
+  },
+  {
+    "id": "ARTICLES-001",
+    "title": "Simplify Articles landing page and remove filtering complexity",
+    "description": "Drastically simplify the Articles landing page to match new Figma design. Remove complex category filtering system, replace with simple 3-column article grid. Clean up unused imports, remove double footer, and remove Sign Up navigation link that doesn't point anywhere. COMPLETED: Simplified to hero section + 3 article cards + newsletter CTA, removed all filtering logic and unused code.",
+    "priority": "high",
+    "status": "completed",
+    "sequence": 22,
+    "tags": ["articles", "simplification", "cleanup", "figma-design", "navigation", "code-optimization"]
   }
 ]
