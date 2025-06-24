@@ -1,0 +1,102 @@
+---
+// Footer component with multi-column contact layout matching Figma exactly
+const base = import.meta.env.BASE_URL;
+---
+
+<footer 
+  class="w-full overflow-hidden flex justify-center items-center gap-2.5"
+  style={{ 
+    background: 'var(--Au-Chico-900, #66353D)' 
+  }}
+>
+  <div class="flex-1 max-w-[1100px] px-8 lg:px-10 py-8 lg:py-12 overflow-hidden flex flex-col justify-start items-start gap-4">
+    <!-- Footer Content Container -->
+    <div class="self-stretch p-4 flex flex-col md:flex-row justify-between items-start gap-8">
+      <!-- Logo Section -->
+      <div class="px-4 flex justify-center items-center gap-2.5">
+        <div class="flex justify-start items-center gap-2">
+          <!-- BioRunway Logo -->
+          <div class="w-7 h-7 relative transform rotate-180">
+            <div class="w-7 h-7 left-0 top-0 absolute rounded-full border-2 border-au-chico-600"></div>
+            <div class="w-[21px] h-[21px] left-[7px] top-[3.5px] absolute rounded-full border-2 border-au-chico-600"></div>
+            <div class="w-[10.5px] h-[10.5px] left-[7px] top-[8.75px] absolute rounded-full bg-au-chico-600"></div>
+          </div>
+          <div class="text-au-chico-50 text-[25.6px] font-pangaia font-light leading-8 tracking-[0.77px]">
+            BioRunway
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Columns -->
+      <div class="flex flex-col md:flex-row justify-start items-start gap-2">
+        <!-- Explore Column -->
+        <div class="w-40 p-3 overflow-hidden flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch text-au-chico-100 text-base font-pangaia font-medium leading-6">
+            Explore
+          </div>
+          <a 
+            href={`${base}articles/`}
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 tracking-[0.32px] hover:text-porsche-100 transition-colors"
+          >
+            Read More
+          </a>
+        </div>
+        
+        <!-- Follow Us Column -->
+        <div class="w-40 p-3 overflow-hidden flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch text-au-chico-100 text-base font-pangaia font-medium leading-6">
+            Follow Us
+          </div>
+          <a 
+            href="https://instagram.com/biorunway"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 hover:text-porsche-100 transition-colors"
+          >
+            Instagram
+          </a>
+          <a 
+            href="https://linkedin.com/company/biorunway"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 hover:text-porsche-100 transition-colors"
+          >
+            LinkedIn
+          </a>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="w-[260px] p-3 overflow-hidden flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch text-au-chico-100 text-base font-pangaia font-medium leading-6">
+            Contact
+          </div>
+          <a 
+            href="mailto:info@biorunway.com"
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 hover:text-porsche-100 transition-colors"
+          >
+            info@biorunway.com
+          </a>
+          <a 
+            href="mailto:advertise@biorunway.com"
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 hover:text-porsche-100 transition-colors"
+          >
+            advertise@biorunway.com
+          </a>
+          <a 
+            href="mailto:editorial@biorunway.com"
+            class="self-stretch text-porsche-200 text-base font-inter font-light leading-6 hover:text-porsche-100 transition-colors"
+          >
+            editorial@biorunway.com
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="self-stretch pt-4 border-t border-au-chico-800 flex justify-center items-center">
+      <div class="text-porsche-200 text-sm font-inter font-light">
+        &copy; {new Date().getFullYear()} BioRunway. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>

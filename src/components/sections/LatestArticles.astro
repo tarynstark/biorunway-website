@@ -33,7 +33,7 @@ const articleDisplayData = {
     background: 'linear-gradient(0deg, #FFFCF6 0%, #FFFCF6 100%), white'
   }}
 >
-  <div class="flex-1 max-w-[1100px] px-10 py-16 overflow-hidden border-l border-r border-au-chico-200 flex-col justify-start items-start gap-4 inline-flex">
+  <div class="flex-1 max-w-[1100px] px-8 lg:px-10 py-12 lg:py-16 flex-col justify-start items-start gap-4 inline-flex">
     <!-- Section Header -->
     <div class="px-4 justify-center items-center gap-2.5 inline-flex">
       <div class="text-au-chico-900 text-[32px] font-pangaia font-medium leading-10">
@@ -42,7 +42,7 @@ const articleDisplayData = {
     </div>
 
     <!-- Articles Grid -->
-    <div class="self-stretch p-4 flex flex-col md:flex-row justify-center items-center gap-6">
+    <div class="w-full p-4 flex flex-col md:flex-row justify-center items-center gap-6">
       {latestArticles.map((article, index) => {
         const displayData = articleDisplayData[article.slug] || {
           title: article.data.title,
