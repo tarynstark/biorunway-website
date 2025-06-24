@@ -169,5 +169,14 @@
     "status": "backlog",
     "sequence": 19,
     "tags": ["email", "ux", "messaging", "styling", "forms"]
+  },
+  {
+    "id": "CONTENT-002",
+    "title": "Replace placeholder images with high-resolution assets",
+    "description": "Replace all placeholder images throughout the site with high-resolution, optimized assets. Includes: hero background, pre-footer background, article images, founder photos, About section images, and any other placeholder content. Ensure images are web-optimized (WebP format when possible) and properly sized for responsive breakpoints.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 20,
+    "tags": ["content", "images", "optimization", "assets", "high-resolution"]
   }
 ]
