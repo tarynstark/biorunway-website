@@ -41,8 +41,8 @@ const articleDisplayData = {
       </div>
     </div>
 
-    <!-- Articles Stack -->
-    <div class="self-stretch p-4 flex-col justify-center items-center gap-6 flex">
+    <!-- Articles Grid -->
+    <div class="self-stretch p-4 flex flex-col md:flex-row justify-center items-center gap-6">
       {latestArticles.map((article, index) => {
         const displayData = articleDisplayData[article.slug] || {
           title: article.data.title,
@@ -50,14 +50,14 @@ const articleDisplayData = {
         };
         
         return (
-          <div class="self-stretch bg-porsche-100 overflow-hidden rounded-[20px] border border-cod-gray-50 flex-col justify-center items-start flex" 
+          <div class="w-full md:flex-1 bg-porsche-100 overflow-hidden rounded-2xl outline outline-1 outline-cod-gray-50 outline-offset-[-1px] flex-col justify-center items-start flex" 
                style={{ boxShadow: '0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25)' }}>
             <!-- Article Image -->
             <div class="self-stretch h-[200px] relative bg-porsche-100 overflow-hidden">
               <img 
                 src={displayData.image}
                 alt={displayData.title}
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute w-full h-full object-cover"
                 style={article.slug === 'glossary-of-terms' ? {
                   backgroundBlendMode: 'color, normal',
                   background: 'linear-gradient(0deg, #ADA983 0%, #ADA983 100%)'
@@ -70,7 +70,7 @@ const articleDisplayData = {
               <div class="self-stretch text-porsche-950 text-[20px] font-pangaia font-medium leading-8" set:html={displayData.title}></div>
               <a 
                 href={`${base}articles/${article.slug}/`}
-                class="self-stretch text-porsche-700 text-base font-sf-pro font-medium leading-6 hover:text-porsche-500 transition-colors"
+                class="self-stretch text-porsche-700 text-base font-sf-pro-rounded font-medium leading-6 tracking-[0.32px] hover:text-porsche-500 transition-colors"
               >
                 Read More
               </a>
