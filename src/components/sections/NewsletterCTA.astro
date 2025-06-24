@@ -1,13 +1,12 @@
 ---
 // Pre-Footer Newsletter CTA section - matching Figma exactly
 import NewsletterEmailSignup from '../NewsletterEmailSignup.jsx';
-const base = import.meta.env.BASE_URL;
 ---
 
 <section 
   class="w-full h-[277px] overflow-hidden flex justify-center items-center"
   style={{
-    backgroundImage: `url('${base.endsWith('/') ? base : base + '/'}images/PrefooterBackgroundMush.png')`,
+    backgroundImage: `url('/images/PrefooterBackgroundMush.png')`,
     backgroundSize: 'cover',
     backgroundPosition: '50% 50%',
     backgroundColor: '#fbf5f5'

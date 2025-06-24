@@ -47,7 +47,6 @@ export default function ArticleCard({
   isFeatured = false
 }: ArticleCardProps) {
   const readTime = calculateReadTime(excerpt);
-  const base = import.meta.env.BASE_URL;
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -99,7 +98,7 @@ export default function ArticleCard({
         {/* Title */}
         <h3 className="text-xl font-bold text-biorunway-900 mb-3 line-clamp-2 leading-tight">
           <a 
-            href={`${base}/articles/${slug}/`}
+            href={`/articles/${slug}/`}
             className="hover:text-brand-main-burgundy transition-colors"
           >
             {title}
@@ -128,7 +127,7 @@ export default function ArticleCard({
         {/* Read More Link */}
         <div className="mt-4 pt-4 border-t border-biorunway-100">
           <a 
-            href={`${base}/articles/${slug}/`}
+            href={`/articles/${slug}/`}
             className="inline-flex items-center text-brand-main-burgundy hover:text-burgundy-700 font-medium transition-colors"
           >
             Read More

@@ -1,6 +1,5 @@
 ---
 // About sections with alternating image/text layout matching Figma design
-const base = import.meta.env.BASE_URL;
 ---
 
 <section 
@@ -21,7 +20,7 @@ const base = import.meta.env.BASE_URL;
                  boxShadow: '0px 0px 1px rgba(220, 214, 214, 0.98)'
                }}>
             <img 
-              src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1A.png`}
+              src="/images/biorunway-home-section1A.png"
               alt="The Impact of Biotech in Fashion"
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -65,7 +64,7 @@ const base = import.meta.env.BASE_URL;
                  boxShadow: '0px 0px 1px rgba(220, 214, 214, 0.98)'
                }}>
             <img 
-              src={`${base.endsWith('/') ? base : base + '/'}images/biorunway-home-section1B.png`}
+              src="/images/biorunway-home-section1B.png"
               alt="Weaving the Future of Fashion"
               class="absolute inset-0 w-full h-full object-cover"
             />
