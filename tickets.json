@@ -196,5 +196,23 @@
     "status": "completed",
     "sequence": 22,
     "tags": ["articles", "simplification", "cleanup", "figma-design", "navigation", "code-optimization"]
+  },
+  {
+    "id": "NAV-001",
+    "title": "Implement professional SVG logos and fix navigation issues",
+    "description": "Replace inline SVG logos with professional SVG files, implement contextual logo variants (light/dark), fix double footer issues, and implement new mobile navigation design. COMPLETED: Added light/dark logo variants, fixed article page navigation colors, eliminated double footers, created full-screen mobile overlay with proper positioning and interactions.",
+    "priority": "high",
+    "status": "completed",
+    "sequence": 23,
+    "tags": ["navigation", "logos", "mobile", "design-system", "cleanup", "accessibility"]
+  },
+  {
+    "id": "ANIMATION-001",
+    "title": "Add Framer Motion animations throughout the site",
+    "description": "Implement smooth animations and transitions using Framer Motion across all pages. Include page load animations, mobile navigation open/close transitions, hover states, scroll-triggered animations for sections, and smooth page transitions. Focus on enhancing user experience with professional, performant animations that match the brand aesthetic.",
+    "priority": "medium",
+    "status": "backlog",
+    "sequence": 24,
+    "tags": ["animation", "framer-motion", "ux", "interactions", "performance", "mobile", "navigation"]
   }
 ]
