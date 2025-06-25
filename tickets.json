@@ -207,12 +207,21 @@
     "tags": ["navigation", "logos", "mobile", "design-system", "cleanup", "accessibility"]
   },
   {
+    "id": "DESIGN-002",
+    "title": "Add subtle grid background pattern to key sections",
+    "description": "Implement elegant box grid background pattern for About, Founders, and article sections. Create layered CSS backgrounds with horizontal fade overlay - grid visible on edges, pure white in center for optimal content readability. COMPLETED: Created .grid-background-visible class with Cod Gray 200 grid (24px spacing, 0.2 opacity) and horizontal white gradient mask (30-70% content area).",
+    "priority": "medium",
+    "status": "completed",
+    "sequence": 22,
+    "tags": ["grid-background", "design-system", "visual-hierarchy", "figma-exact", "css"]
+  },
+  {
     "id": "ANIMATION-001",
     "title": "Add Framer Motion animations throughout the site",
     "description": "Implement smooth animations and transitions using Framer Motion across all pages. Include page load animations, mobile navigation open/close transitions, hover states, scroll-triggered animations for sections, and smooth page transitions. Focus on enhancing user experience with professional, performant animations that match the brand aesthetic.",
     "priority": "medium",
     "status": "backlog",
-    "sequence": 24,
+    "sequence": 25,
     "tags": ["animation", "framer-motion", "ux", "interactions", "performance", "mobile", "navigation"]
   }
 ]
