@@ -152,3 +152,87 @@ PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 - Open Graph and Twitter Card support
 - Structured data (JSON-LD) for organization information
 - Content-focused approach with minimal JavaScript footprint
+
+## Mandatory Ticket Management Workflow
+
+**CRITICAL**: Every code change MUST follow this workflow before committing:
+
+### 1. Pre-Commit Ticket Review
+**ALWAYS** before making any commits:
+- Read `tickets.json` to understand current project status
+- Identify which ticket(s) your changes address
+- Check if new tickets need to be created for discovered work
+
+### 2. During Development
+- Use TodoWrite tool to track implementation progress
+- Reference ticket IDs in commit messages and PR descriptions
+- Document any scope changes or new requirements discovered
+
+### 3. Post-Implementation Ticket Updates
+**REQUIRED** for every commit involving code changes:
+
+```bash
+# 1. Update tickets.json FIRST
+# - Mark completed tickets with detailed description of work done
+# - Update status: "backlog" -> "in_progress" -> "completed"
+# - Add implementation details to description field
+# - Create new tickets for any discovered work or tech debt
+
+# 2. Commit tickets.json separately
+git add tickets.json
+git commit -m "Update tickets.json - mark [TICKET-ID] complete, add [NEW-TICKETS]"
+
+# 3. Then commit your code changes
+git add .
+git commit -m "[TICKET-ID]: Brief description\n\nDetailed implementation notes\n\n🤖 Generated with Claude Code"
+```
+
+### 4. Ticket Creation Guidelines
+Create new tickets when you:
+- Discover technical debt that needs addressing
+- Implement features that require follow-up work
+- Find bugs or issues during development
+- Identify improvements or optimizations
+- Need to refactor or clean up code
+
+### 5. Ticket Status Management
+- **backlog**: Not yet started, prioritized in sequence
+- **in_progress**: Currently being worked on (limit to 1-2 tickets)
+- **completed**: Fully implemented and tested
+
+### 6. Commit Message Standards
+Always include:
+- Ticket ID in format `[TICKET-ID]: Description`
+- Reference to tickets.json updates when applicable
+- Clear description of what was implemented
+- Any breaking changes or migration notes
+
+**Example Workflow:**
+```bash
+# 1. Start work
+# Read tickets.json, identify CONTENT-001
+
+# 2. During implementation
+# Use TodoWrite to track progress
+
+# 3. Complete work
+# Update tickets.json - mark CONTENT-001 complete, add CONTENT-003 for discovered optimization
+git add tickets.json
+git commit -m "Update tickets.json - mark CONTENT-001 complete, add CONTENT-003 image optimization"
+
+# 4. Commit code changes
+git add .
+git commit -m "CONTENT-001: Add real images to Latest Articles cards
+
+- Replace placeholder images with optimized article images
+- Update image paths and alt text for accessibility
+- Ensure proper aspect ratios and loading performance
+
+🤖 Generated with Claude Code"
+```
+
+This workflow ensures:
+- Full traceability of all work
+- Proper project planning and documentation
+- No forgotten tasks or technical debt
+- Clear commit history tied to business requirements
