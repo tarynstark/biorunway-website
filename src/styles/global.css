@@ -21,6 +21,7 @@
   font-display: swap;
 }
 
+/* SF Pro Rounded - Use system fonts as primary with web fallbacks */
 @font-face {
   font-family: 'SF Pro Rounded';
   src: url('../fonts/SF-Pro-Rounded-Medium.woff2') format('woff2');
@@ -29,13 +30,20 @@
   font-display: swap;
 }
 
+/* Custom easing for smooth animations */
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
 /* Custom font classes for better browser compatibility */
 .font-pangaia {
   font-family: 'PP Pangaia', 'Playfair Display', 'Times New Roman', 'Georgia', serif !important;
 }
 
 .font-sf-pro {
-  font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Rounded', 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
 }
 
 /* Enhanced fallbacks for cross-browser compatibility */
@@ -46,7 +54,7 @@
 
 .font-\[\'SF_Pro_Rounded\'\],
 .font-\[SF_Pro_Rounded\] {
-  font-family: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Rounded', 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
 }
 
 /* BioRunway Color Palette */

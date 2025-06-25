@@ -101,20 +101,20 @@
   {
     "id": "CLEANUP-001",
     "title": "Remove unused About and Contact page components",
-    "description": "Clean up codebase by removing About.astro and Contact.astro components, update routing, and ensure no broken links remain after homepage consolidation.",
+    "description": "Clean up codebase by removing About.astro and Contact.astro components, update routing, and ensure no broken links remain after homepage consolidation. COMPLETED: Removed src/pages/about.astro and src/pages/contact.astro, verified no broken references, build successful.",
     "priority": "low",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 12,
     "tags": ["cleanup", "routing", "maintenance"]
   },
   {
     "id": "EMAIL-001",
     "title": "Style email signup forms to match Figma design",
-    "description": "Update EmailSignup component with backdrop blur effect, proper border styling (#a5555b for hero, #d3999a for newsletter), button styling, and form validation states.",
+    "description": "Update EmailSignup component with backdrop blur effect, proper border styling (#a5555b for hero, #d3999a for newsletter), button styling, and form validation states. COMPLETED: Implemented 5 form states (default, user entry, loading, confirmed, complete) with exact Figma styling, SF Pro font loading, custom easing animations, spinner/checkmark icons, and proper state reset on navigation.",
     "priority": "medium",
-    "status": "backlog",
+    "status": "completed",
     "sequence": 13,
-    "tags": ["email", "forms", "styling", "validation"]
+    "tags": ["email", "forms", "styling", "validation", "figma-exact", "animations"]
   },
   {
     "id": "EMAIL-002", 
