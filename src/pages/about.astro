@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import About from '../components/sections/About.astro';
+import Founders from '../components/sections/Founders.astro';
+import AdvisoryBoard from '../components/sections/AdvisoryBoard.astro';
+import NewsletterCTA from '../components/sections/NewsletterCTA.astro';
+import FadeUpWrapper from '../components/FadeUpWrapper.jsx';
+---
+
+<BaseLayout 
+  title="About | BioRunway" 
+  description="Learn about BioRunway's mission to illuminate the past, present, and future of biotech and fashion."
+>
+  <!-- Hero Section with Green Fabric Background -->
+  <section 
+    class="w-full h-[480px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden justify-center items-center gap-2.5 inline-flex"
+    style={{
+      backgroundImage: `url('/images/green-fabric-about-header.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: '50% 50%',
+      backgroundColor: '#371A1E',
+    }}
+  >
+    <div class="flex-1 max-w-[1100px] px-8 lg:px-10 py-[120px] overflow-hidden flex-col justify-start items-start gap-2.5 inline-flex">
+      <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+        <FadeUpWrapper client:load>
+          <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+            <!-- Main Headline -->
+            <h1 class="self-stretch text-center text-au-chico-50 text-[44px] md:text-[48px] font-pangaia italic font-light leading-[60px] md:leading-[54px] mb-2.5">
+              About BioRunway
+            </h1>
+            <!-- Subtitle -->
+            <p class="w-full max-w-[560px] text-center text-white text-[18px] font-inter font-light leading-[22px]">
+              Illuminating the past, present, and future of biotech and fashion.
+            </p>
+          </div>
+        </FadeUpWrapper>
+      </div>
+    </div>
+  </section>
+  <About />
+  <!-- Combined Founders and Advisory Board section with shared background -->
+  <div class="grid-background-visible">
+    <Founders />
+    <AdvisoryBoard />
+  </div>
+  <NewsletterCTA />
+</BaseLayout>

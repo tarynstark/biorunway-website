@@ -2,25 +2,26 @@
 // Latest Articles section matching Figma design exactly
 import { getCollection } from 'astro:content';
 
-// Get the latest 3 articles
+// Get the specific articles that match the /articles page exactly
 const allArticles = await getCollection('articles');
-const latestArticles = allArticles
-  .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime())
-  .slice(0, 3);
+const specificSlugs = ['what-why-who-biorunway', 'biodyes', 'glossary-of-terms'];
+const latestArticles = specificSlugs.map(slug => 
+  allArticles.find(article => article.slug === slug)
+).filter(Boolean);
 
 // Map slugs to display titles that match the Figma design
 const articleDisplayData = {
   'what-why-who-biorunway': {
     title: 'The Who, What, Why of BioRunway',
-    image: 'https://placehold.co/683x368'
+    image: '/images/fibers-blog-tile-1.png'
   },
   'biodyes': {
     title: 'Biodyes 101: The colorful future of fashion?',
-    image: 'https://placehold.co/750x750'
+    image: '/images/websculpt-blog-tile-2.png'
   },
   'glossary-of-terms': {
     title: 'Knowledge Hub: Glossary of terms',
-    image: 'https://placehold.co/1024x1024'
+    image: '/images/glass-lines-blog-tile-3.jpg'
   }
 };
 ---
@@ -48,8 +49,11 @@ const articleDisplayData = {
         };
         
         return (
-          <div class="w-full md:flex-1 bg-porsche-100 overflow-hidden rounded-2xl outline outline-1 outline-cod-gray-50 outline-offset-[-1px] flex-col justify-center items-start flex" 
-               style={{ boxShadow: '0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25)' }}>
+          <a 
+            href={`/articles/${article.slug}/`}
+            class="w-full md:flex-1 bg-porsche-100 overflow-hidden rounded-2xl outline outline-1 outline-cod-gray-50 outline-offset-[-1px] flex-col justify-center items-start flex hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+            style={{ boxShadow: '0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25)' }}
+          >
             <!-- Article Image -->
             <div class="self-stretch h-[200px] relative bg-porsche-100 overflow-hidden">
               <img 
@@ -66,14 +70,11 @@ const articleDisplayData = {
             <!-- Article Content -->
             <div class="self-stretch p-6 bg-white overflow-hidden flex-col justify-start items-start gap-4 flex">
               <div class="self-stretch text-porsche-950 text-[20px] font-pangaia font-medium leading-8" set:html={displayData.title}></div>
-              <a 
-                href={`/articles/${article.slug}/`}
-                class="self-stretch text-porsche-700 text-base font-sf-pro-rounded font-medium leading-6 tracking-[0.32px] hover:text-porsche-500 transition-colors"
-              >
+              <div class="self-stretch text-porsche-700 text-base font-sf-pro-rounded font-medium leading-6 tracking-[0.32px] hover:text-porsche-500 transition-colors">
                 Read More
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
         );
       })}
     </div>

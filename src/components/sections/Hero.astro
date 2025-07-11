@@ -1,6 +1,7 @@
 ---
 // Hero component with complex background and email signup integration
 import HeroEmailSignup from '../HeroEmailSignup.jsx';
+import FadeUpWrapper from '../FadeUpWrapper.jsx';
 ---
 
 <section 
@@ -15,19 +16,23 @@ import HeroEmailSignup from '../HeroEmailSignup.jsx';
 >
   <div class="flex-1 max-w-[1100px] px-8 lg:px-10 py-40 lg:py-[120px] overflow-hidden flex-col justify-start items-start gap-2.5 inline-flex">
     <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
-      <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
-        <!-- Main Headline -->
-        <h1 class="self-stretch text-center text-au-chico-50 text-[44px] md:text-[48px] font-pangaia italic font-light leading-[60px] md:leading-[54px] mb-2.5">
-          Illuminating the<br />Fabrics of Change
-        </h1>
-        <!-- Subtitle -->
-        <p class="w-full max-w-[560px] text-center text-white text-[18px] font-inter font-light leading-[22px]">
-          The past, present, and future of biotech and fashion.
-        </p>
-      </div>
+      <FadeUpWrapper client:load>
+        <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+          <!-- Main Headline -->
+          <h1 class="self-stretch text-center text-au-chico-50 text-[44px] md:text-[48px] font-pangaia italic font-light leading-[60px] md:leading-[54px] mb-2.5">
+            Illuminating the<br />Fabrics of Change
+          </h1>
+          <!-- Subtitle -->
+          <p class="w-full max-w-[560px] text-center text-white text-[18px] font-inter font-light leading-[22px]">
+            The past, present, and future of biotech and fashion.
+          </p>
+        </div>
+      </FadeUpWrapper>
       
       <!-- Email Signup Form -->
-      <HeroEmailSignup client:load />
+      <FadeUpWrapper client:load delay={0.3}>
+        <HeroEmailSignup client:load />
+      </FadeUpWrapper>
     </div>
   </div>
 </section>
