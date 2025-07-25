@@ -26,6 +26,7 @@ export default function NewsletterEmailSignup() {
   const [isConfirmed, setIsConfirmed] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [error, setError] = useState('')
+  const [showCheckEmail, setShowCheckEmail] = useState(false)
 
   // Reset state when component mounts or page reloads
   useEffect(() => {
@@ -60,13 +61,22 @@ export default function NewsletterEmailSignup() {
     setError('')
 
     try {
-      const { data, error } = await supabase
-        .from('General Email List')
-        .insert([{ email }])
+      // Sign up user with Supabase Auth - this will trigger confirmation email via SMTP
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: `temp_${Math.random().toString(36).slice(2)}`, // Temporary password for newsletter-only users
+        options: {
+          data: {
+            newsletter_signup: true,
+            signup_source: 'newsletter'
+          },
+          emailRedirectTo: `${window.location.origin}/auth/confirm`
+        }
+      })
 
       if (error) {
-        console.error('Supabase error details:', error)
-        if (error.code === '23505') {
+        console.error('Supabase Auth error:', error)
+        if (error.message?.includes('already registered') || error.message?.includes('already exists')) {
           setError('This email is already subscribed to our newsletter')
         } else if (error.message?.includes('network') || error.message?.includes('fetch')) {
           setError('Network error. Please check your connection and try again.')
@@ -75,15 +85,20 @@ export default function NewsletterEmailSignup() {
         }
         setIsLoading(false)
       } else {
-        // Show confirmed state briefly
-        setIsConfirmed(true)
+        // Auth signup successful - show check email message
         setIsLoading(false)
+        setShowCheckEmail(true)
         
-        // After 800ms, show complete state
+        // Show confirmed state briefly, then complete
+        setTimeout(() => {
+          setIsConfirmed(true)
+          setShowCheckEmail(false)
+        }, 2000)
+        
         setTimeout(() => {
           setIsComplete(true)
           setIsConfirmed(false)
-        }, 800)
+        }, 2800)
       }
     } catch (error) {
       console.error('Email signup error:', error)
@@ -175,6 +190,13 @@ export default function NewsletterEmailSignup() {
         <div className="text-center" role="alert">
           <p id="email-error" className="text-sm text-red-300">
             {error}
+          </p>
+        </div>
+      )}
+      {showCheckEmail && (
+        <div className="text-center">
+          <p className="text-sm text-[#f7f7f6] opacity-80">
+            Check your email for a confirmation link to complete your subscription.
           </p>
         </div>
       )}

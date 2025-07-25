@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Email Confirmation | BioRunway" 
+  description="Confirm your email subscription to BioRunway newsletter."
+>
+  <section 
+    class="w-full min-h-[80vh] flex items-center justify-center px-8 py-20"
+    style="background: linear-gradient(135deg, #371a1e 0%, #66353d 100%)"
+  >
+    <div class="max-w-[600px] text-center">
+      <!-- Success Icon -->
+      <div class="w-16 h-16 mx-auto mb-8 flex items-center justify-center bg-[rgba(251,245,245,0.2)] rounded-full">
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none">
+          <path 
+            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" 
+            stroke="#fbf5f5" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-[#fbf5f5] text-[36px] md:text-[44px] font-pangaia italic font-light leading-[48px] mb-6">
+        Email Confirmed!
+      </h1>
+
+      <!-- Description -->
+      <p class="text-[#f7f7f6] text-[18px] font-inter leading-[28px] mb-8 opacity-90">
+        Thank you for subscribing to the BioRunway newsletter. You're now part of our community exploring the intersection of biotechnology and fashion.
+      </p>
+
+      <!-- What's Next -->
+      <div class="bg-[rgba(251,245,245,0.1)] rounded-[20px] p-6 mb-8 text-left">
+        <h2 class="text-[#fbf5f5] text-[20px] font-pangaia font-light mb-4">
+          What's Next?
+        </h2>
+        <ul class="text-[#f7f7f6] text-[16px] font-inter leading-[24px] space-y-2 opacity-90">
+          <li class="flex items-start gap-3">
+            <span class="text-[#a5555b] mt-1">•</span>
+            <span>Receive curated insights on biotech fashion innovations</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#a5555b] mt-1">•</span>
+            <span>Get early access to sustainability research and reports</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#a5555b] mt-1">•</span>
+            <span>Stay informed about investment opportunities in the space</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#a5555b] mt-1">•</span>
+            <span>Access deep-dive articles from industry experts</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Return to Site Button -->
+      <a 
+        href="/"
+        class="inline-flex items-center gap-3 px-6 py-3 bg-[#371a1e] hover:bg-[#2d1519] rounded-[80px] text-[#fbf5f5] text-[16px] font-sf-pro font-medium transition-all duration-300"
+        style="box-shadow: 0px 4px 8px rgba(0,0,0,0.2)"
+      >
+        <span>Explore BioRunway</span>
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none">
+          <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Handle Auth Confirmation -->
+  <script>
+    // Handle Supabase auth confirmation on page load
+    import { supabase } from '../../lib/supabase';
+
+    // Check if this is a confirmation callback
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    const type = urlParams.get('type');
+
+    if (token && type === 'signup') {
+      // Process the confirmation
+      supabase.auth.verifyOtp({
+        token_hash: token,
+        type: 'signup'
+      }).then(({ data, error }) => {
+        if (error) {
+          console.error('Confirmation error:', error);
+          // You could show an error state here
+        } else {
+          console.log('Email confirmed successfully:', data);
+          // User is now confirmed and signed in
+        }
+      });
+    }
+  </script>
+</BaseLayout>
