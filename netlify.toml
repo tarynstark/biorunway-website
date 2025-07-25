@@ -1,0 +1,39 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+# Security headers matching Vercel configuration
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Astro SPA fallback - handle client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"]}
+
+# Handle Astro's static file routing
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 200
+
+# Deploy context for staging
+[context.deploy-preview]
+  environment = { PUBLIC_STAGING_PASSWORD = "your-staging-password" }
+
+[context.branch-deploy]
+  environment = { PUBLIC_STAGING_PASSWORD = "your-staging-password" }
+
+# Main production context (no password protection)
+[context.production]
+  environment = { PUBLIC_STAGING_PASSWORD = "" }

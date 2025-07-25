@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterCTA from '../../components/sections/NewsletterCTA.astro';
+import FadeUpWrapper from '../../components/FadeUpWrapper.jsx';
 ---
 
 <BaseLayout 
@@ -9,14 +10,32 @@ import NewsletterCTA from '../../components/sections/NewsletterCTA.astro';
 >
   
   <!-- Hero Section -->
-  <div class="relative overflow-hidden" style="background: linear-gradient(0deg, rgba(149.96, 139.37, 20.24, 0.08) 0%, rgba(149.96, 139.37, 20.24, 0.08) 100%), #392B0F; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); background-image: url('/images/ArticlesHeroBackgorundKombuchaLeather.png'); background-size: cover; background-position: center;">
-    <div class="max-w-[1100px] mx-auto px-10 py-[100px]">
-      <div class="text-center">
-        <h1 class="text-5xl font-light italic text-au-chico-50 mb-4" style="font-family: 'PP Pangaia'; line-height: 54px;">Latest Articles</h1>
-        <p class="text-lg font-light text-white max-w-[560px] mx-auto" style="font-family: 'Inter'; line-height: 22px;">A look into biotech fashion's<br/>latest innovations and industry news</p>
+  <section 
+    class="w-full h-[480px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden justify-center items-center gap-2.5 inline-flex"
+    style={{
+      backgroundImage: `url('/images/kombucha-leather-articles-header.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: '50% 50%',
+      backgroundColor: '#392B0F',
+    }}
+  >
+    <div class="flex-1 max-w-[1100px] px-8 lg:px-10 py-[120px] overflow-hidden flex-col justify-start items-start gap-2.5 inline-flex">
+      <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+        <FadeUpWrapper client:load>
+          <div class="self-stretch p-4 overflow-hidden flex-col justify-center items-center flex">
+            <!-- Main Headline -->
+            <h1 class="self-stretch text-center text-au-chico-50 text-[44px] md:text-[48px] font-pangaia italic font-light leading-[60px] md:leading-[54px] mb-2.5">
+              Latest Articles
+            </h1>
+            <!-- Subtitle -->
+            <p class="w-full max-w-[560px] text-center text-white text-[18px] font-inter font-light leading-[22px]">
+              A look into biotech fashion's latest innovations and industry news
+            </p>
+          </div>
+        </FadeUpWrapper>
       </div>
     </div>
-  </div>
+  </section>
   
   <!-- Separator Lines -->
   <div class="h-px bg-au-chico-200"></div>
@@ -28,37 +47,37 @@ import NewsletterCTA from '../../components/sections/NewsletterCTA.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1020px] mx-auto">
         
         <!-- Article 1 -->
-        <div class="bg-porsche-100 rounded-2xl overflow-hidden" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
+        <a href="/articles/what-why-who-biorunway/" class="bg-porsche-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200 cursor-pointer" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
           <div class="h-[200px] bg-porsche-100 relative overflow-hidden">
-            <img src="https://placehold.co/434x234" alt="" class="absolute -left-[60px] -top-4 w-[434px] h-[234px] object-cover">
+            <img src="/images/fibers-blog-tile-1.png" alt="Bio-fibers textile" class="w-full h-full object-cover">
           </div>
           <div class="p-6 bg-white">
             <h3 class="text-xl font-medium text-porsche-950 mb-4" style="font-family: 'PP Pangaia'; line-height: 32px;">The Who, What, Why of BioRunway</h3>
-            <a href="/articles/what-why-who-biorunway/" class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</a>
+            <div class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</div>
           </div>
-        </div>
+        </a>
         
         <!-- Article 2 -->
-        <div class="bg-porsche-100 rounded-2xl overflow-hidden" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
+        <a href="/articles/biodyes/" class="bg-porsche-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200 cursor-pointer" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
           <div class="h-[200px] bg-porsche-100 relative overflow-hidden">
-            <img src="https://placehold.co/685x685" alt="" class="absolute -left-[241px] -top-[343px] w-[685px] h-[685px] object-cover">
+            <img src="/images/websculpt-blog-tile-2.png" alt="Web sculpture design" class="w-full h-full object-cover">
           </div>
           <div class="p-6 bg-white">
             <h3 class="text-xl font-medium text-porsche-950 mb-4" style="font-family: 'PP Pangaia'; line-height: 32px;">Biodyes 101:<br/>The colorful future of fashion?</h3>
-            <a href="/articles/biodyes/" class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</a>
+            <div class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</div>
           </div>
-        </div>
+        </a>
         
         <!-- Article 3 -->
-        <div class="bg-porsche-100 rounded-2xl overflow-hidden" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
+        <a href="/articles/glossary-of-terms/" class="bg-porsche-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200 cursor-pointer" style="box-shadow: 0px 2px 4px rgba(198.15, 198.15, 198.15, 0.25); outline: 1px #F7F7F6 solid; outline-offset: -1px;">
           <div class="h-[200px] bg-porsche-100 relative overflow-hidden">
-            <img src="https://placehold.co/1024x1024" alt="" class="absolute -left-[356px] -top-[102px] w-[1024px] h-[1024px] object-cover" style="background: linear-gradient(0deg, #ADA983 0%, #ADA983 100%); background-blend-mode: color, normal;">
+            <img src="/images/glass-lines-blog-tile-3.jpg" alt="Glass lines pattern" class="w-full h-full object-cover">
           </div>
           <div class="p-6 bg-white">
             <h3 class="text-xl font-medium text-porsche-950 mb-4" style="font-family: 'PP Pangaia'; line-height: 32px;">Knowledge Hub:<br/>Glossary of terms</h3>
-            <a href="/articles/glossary-of-terms/" class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</a>
+            <div class="text-porsche-700 font-medium" style="font-family: 'SF Pro Rounded'; font-size: 16px; line-height: 24px; letter-spacing: 0.32px;">Read More</div>
           </div>
-        </div>
+        </a>
         
       </div>
     </div>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FadeUpWrapper from '../../components/FadeUpWrapper.jsx';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -13,6 +14,7 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
+const isGlossary = article.slug === 'glossary-of-terms';
 ---
 
 <BaseLayout 
@@ -26,9 +28,239 @@ const { Content } = await article.render();
           {article.data.title}
         </h1>
         
-        <div class="prose prose-lg max-w-none">
-          <Content />
-        </div>
+        {isGlossary ? (
+          <!-- Interactive Glossary UI -->
+          <FadeUpWrapper client:load delay={0.2}>
+            <div class="glossary-content max-w-none">
+              <div class="text-center mb-12">
+                <p class="text-lg text-mustard-800 font-inter leading-7 max-w-4xl mx-auto">
+                  Do you know the difference between biocompatible, biofabrication and biomaterial? We've curated a list of common terms and phrases to help you navigate and speak the terminology of the world of biotech fashion.
+                </p>
+              </div>
+
+              <!-- Search Box -->
+              <div class="mb-12 max-w-md mx-auto">
+                <input 
+                  type="text" 
+                  id="glossary-search"
+                  placeholder="Search terms..." 
+                  class="w-full px-4 py-3 border border-mustard-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mustard-500 focus:border-mustard-500 text-mustard-900 placeholder-mustard-500"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="glossary-terms">
+                <!-- B Section -->
+                <div>
+                  <h2 class="text-2xl font-pangaia font-medium text-mustard-900 mb-6 border-b border-mustard-200 pb-2">B</h2>
+                  
+                  <div class="mb-6 glossary-term" data-term="bio-based">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Bio-based</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">Products derived from renewable biological resources. This term distinguishes materials made from living matter from those made from fossil fuels or other non-renewable resources.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biocompatible">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biocompatible</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">Materials that are not harmful to living tissue. In fashion, this property is particularly important for materials that come into direct contact with skin and for ensuring safe degradation at the end of a product's life.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biodegradable">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biodegradable</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">Materials capable of being decomposed naturally by biological processes. This property is increasingly important in fashion as brands seek to reduce their environmental impact.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biodyes">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biodyes</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">Colors produced using biological processes such as fermentation, rather than traditional chemical synthesis. In fashion, biodyes offer more sustainable alternatives to conventional synthetic dyes by reducing water usage, toxic chemicals, and environmental pollution associated with conventional dyeing processes.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biofabrication">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biofabrication</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The production of materials and products using living organisms or biological systems. This emerging field allows fashion companies to grow materials like leather alternatives in controlled environments, rather than relying on traditional manufacturing.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biomaterial">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biomaterial</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">A material derived from living matter or produced using biological processes. In fashion, biomaterials include lab-grown leather alternatives, microbial cellulose, and bio-based fibers that offer sustainable alternatives to traditional materials.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="bioreactor">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Bioreactor</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">A controlled environment system designed to support biological material production. These systems are essential for consistent, large-scale production of bio-based fashion materials. Also known as a fermenter.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="biotechnology biotech">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Biotechnology (Biotech)</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The application of biological systems and living organisms to develop new materials and products. In fashion, biotechnology enables the creation of innovative textiles through natural processes, offering alternatives to conventional manufacturing methods.</p>
+                  </div>
+                </div>
+
+                <!-- C-G Section -->
+                <div>
+                  <h2 class="text-2xl font-pangaia font-medium text-mustard-900 mb-6 border-b border-mustard-200 pb-2">C-G</h2>
+                  
+                  <div class="mb-6 glossary-term" data-term="carbon footprint">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Carbon footprint</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The total greenhouse gas emissions associated with a product's creation, use, and disposal. This measurement helps quantify the environmental impact of fashion products and processes.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="circular economy">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Circular economy</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">An economic model focused on sustainable resource use through reuse, recycling, and regeneration. In fashion, this approach aims to eliminate waste and maximize the lifecycle value of materials and products.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="downstream processing">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Downstream processing</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The series of steps required to purify and prepare bio-based materials for use in fashion products. This includes separating, treating, and finishing materials for textile applications.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="feedstock">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Feedstock</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The raw materials used as inputs in biological production processes. Fashion biotechnology often uses renewable resources and agricultural byproducts as feedstock for creating sustainable materials.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="fermentation">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Fermentation</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">A biological process where microorganisms transform raw materials into new compounds. Fashion applications include the production of bio-based materials and the processing of natural fibers.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="genetic engineering">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Genetic engineering</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The deliberate modification of an organism's DNA (genetic code) to produce desired characteristics. In fashion materials, this technology enables the production of specific proteins and compounds for creating new types of fibers and materials.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <!-- L-M Section -->
+                <div>
+                  <h2 class="text-2xl font-pangaia font-medium text-mustard-900 mb-6 border-b border-mustard-200 pb-2">L-M</h2>
+                  
+                  <div class="mb-6 glossary-term" data-term="life cycle assessment lca">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Life Cycle Assessment (LCA)</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">A systematic analysis of environmental impacts associated with all stages of a product's life, from raw material extraction through disposal. This assessment helps fashion brands quantify and compare the environmental impact of different materials and processes.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="metabolic engineering">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Metabolic engineering</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The optimization of cellular processes to enhance the production of specific materials. This technology improves how efficiently organisms can create bio-based materials and natural dyes for fashion applications.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="microbial cellulose">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Microbial cellulose</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">A form of cellulose produced by bacteria during fermentation. This material can be used to create leather-like textiles and other fashion materials with unique properties and minimal environmental impact.</p>
+                  </div>
+                </div>
+
+                <!-- S Section -->
+                <div>
+                  <h2 class="text-2xl font-pangaia font-medium text-mustard-900 mb-6 border-b border-mustard-200 pb-2">S</h2>
+                  
+                  <div class="mb-6 glossary-term" data-term="scale-up">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Scale-up</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The process of increasing production from laboratory to commercial quantities. This phase is crucial for making bio-based fashion materials commercially viable and widely available.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="substrate">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Substrate</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The base material that supports biological growth and production. In fashion biofabrication, substrates provide the foundation for growing new materials.</p>
+                  </div>
+
+                  <div class="mb-6 glossary-term" data-term="synthetic biology">
+                    <h3 class="font-semibold text-mustard-950 mb-2">Synthetic biology</h3>
+                    <p class="text-base font-inter leading-7 text-mustard-800">The design and engineering of biological systems to create new functions. Fashion applications include developing microorganisms that can produce specific proteins for textile creation, such as silk-like fibers or collagen-based materials.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              // Search and copy functionality
+              document.addEventListener('DOMContentLoaded', function() {
+                const searchInput = document.getElementById('glossary-search');
+                const terms = document.querySelectorAll('.glossary-term');
+                
+                // Search functionality
+                searchInput?.addEventListener('input', function() {
+                  const searchTerm = this.value.toLowerCase();
+                  
+                  terms.forEach(term => {
+                    const termData = term.getAttribute('data-term').toLowerCase();
+                    const termText = term.textContent.toLowerCase();
+                    
+                    if (termData.includes(searchTerm) || termText.includes(searchTerm)) {
+                      term.style.display = 'block';
+                    } else {
+                      term.style.display = 'none';
+                    }
+                  });
+                });
+
+                // Add copy buttons to all terms
+                terms.forEach(term => {
+                  const heading = term.querySelector('h3');
+                  const paragraph = term.querySelector('p');
+                  
+                  if (heading && paragraph && !term.querySelector('.copy-btn')) {
+                    const termName = heading.textContent.trim();
+                    const termDefinition = paragraph.textContent.trim();
+                    
+                    // Add group classes
+                    term.classList.add('group', 'relative');
+                    
+                    // Create button container
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.className = 'flex items-start justify-between';
+                    
+                    // Move heading into container
+                    heading.className = 'font-semibold text-mustard-950 mb-2 flex-1';
+                    buttonContainer.appendChild(heading);
+                    
+                    // Create copy button
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-btn opacity-0 group-hover:opacity-100 transition-opacity duration-200 ml-2 p-1 hover:bg-mustard-100 rounded';
+                    copyButton.title = 'Copy definition';
+                    copyButton.innerHTML = `
+                      <svg class="w-4 h-4 text-mustard-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    `;
+                    
+                    // Add click handler
+                    copyButton.addEventListener('click', async function() {
+                      const textToCopy = `${termName}: ${termDefinition}`;
+                      
+                      try {
+                        await navigator.clipboard.writeText(textToCopy);
+                        
+                        // Show feedback
+                        const originalHTML = this.innerHTML;
+                        this.innerHTML = `
+                          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        `;
+                        
+                        setTimeout(() => {
+                          this.innerHTML = originalHTML;
+                        }, 1000);
+                      } catch (err) {
+                        console.error('Failed to copy: ', err);
+                      }
+                    });
+                    
+                    buttonContainer.appendChild(copyButton);
+                    term.insertBefore(buttonContainer, paragraph);
+                  }
+                });
+              });
+            </script>
+          </FadeUpWrapper>
+        ) : (
+          <!-- Regular Article Content -->
+          <div class="prose prose-lg max-w-none">
+            <Content />
+          </div>
+        )}
       </div>
     </div>
   </main>
