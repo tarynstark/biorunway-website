@@ -11,7 +11,8 @@ npm run preview  # Preview production build locally
 npm run astro    # Access Astro CLI commands
 ```
 
-**Live Site:** https://biorunway.com
+**Live Site:** https://biorunway.com (Password Protected)
+**Password:** biorunwayiscool
 
 ## Architecture Overview
 
@@ -23,7 +24,7 @@ npm run astro    # Access Astro CLI commands
 - **Content**: Content Collections with Zod schema validation
 - **Backend**: Supabase for email list management
 - **Animation**: Framer Motion v12.16.0
-- **Deployment**: GitHub Pages (`/biorunway-website` base path)
+- **Deployment**: Netlify with custom domain and password protection
 
 ### Key Architecture Patterns
 
@@ -140,7 +141,13 @@ The project is undergoing a major homepage redesign with consolidated informatio
 ```bash
 PUBLIC_SUPABASE_URL=your_supabase_url
 PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SITE_PASSWORD=biorunwayiscool  # For production password protection
 ```
+
+### Site Access
+- **Production Site**: https://biorunway.com - Password protected with "biorunwayiscool"
+- **Preview Deployments**: Branch and deploy previews remain unprotected for development
+- **Password Protection**: Applied only to production domain via Netlify configuration
 
 ### Supabase Integration
 - Email collection managed through `src/lib/supabase.js`

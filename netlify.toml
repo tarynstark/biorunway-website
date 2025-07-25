@@ -34,6 +34,7 @@
 [context.branch-deploy]
   environment = { PUBLIC_STAGING_PASSWORD = "your-staging-password" }
 
-# Main production context (no password protection)
+# Main production context with password protection
 [context.production]
+  password = "$SITE_PASSWORD"
   environment = { PUBLIC_STAGING_PASSWORD = "" }
