@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
+import { sendWelcomeEmail } from '../lib/resend'
 
 // Spinner SVG component
 const SpinnerIcon = () => (
@@ -60,6 +61,7 @@ export default function HeroEmailSignup() {
     setError('')
 
     try {
+      // First, add to Supabase database
       const { data, error } = await supabase
         .from('General Email List')
         .insert([{ email }])
@@ -75,6 +77,14 @@ export default function HeroEmailSignup() {
         }
         setIsLoading(false)
       } else {
+        // Database insert successful, now send welcome email
+        const emailResult = await sendWelcomeEmail(email)
+        
+        if (!emailResult.success) {
+          console.error('Failed to send welcome email:', emailResult.error)
+          // Don't show error to user - email was still subscribed successfully
+        }
+        
         // Show confirmed state briefly
         setIsConfirmed(true)
         setIsLoading(false)
