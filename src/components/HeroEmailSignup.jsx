@@ -41,9 +41,20 @@ export default function HeroEmailSignup() {
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
   }, [])
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (isComplete) return
+    
+    // Client-side email validation
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address')
+      return
+    }
     
     setIsLoading(true)
     setError('')
@@ -54,8 +65,11 @@ export default function HeroEmailSignup() {
         .insert([{ email }])
 
       if (error) {
+        console.error('Supabase error details:', error)
         if (error.code === '23505') {
-          setError('Email already subscribed!')
+          setError('This email is already subscribed to our newsletter')
+        } else if (error.message?.includes('network') || error.message?.includes('fetch')) {
+          setError('Network error. Please check your connection and try again.')
         } else {
           setError('Error subscribing. Please try again.')
         }
@@ -72,7 +86,12 @@ export default function HeroEmailSignup() {
         }, 800)
       }
     } catch (error) {
-      setError('Error subscribing. Please try again.')
+      console.error('Email signup error:', error)
+      if (error.name === 'TypeError' && error.message?.includes('fetch')) {
+        setError('Network error. Please check your connection and try again.')
+      } else {
+        setError('Error subscribing. Please try again.')
+      }
       setIsLoading(false)
     }
   }
@@ -116,6 +135,9 @@ export default function HeroEmailSignup() {
                     }}
                     required
                     disabled={isLoading || isConfirmed}
+                    aria-label="Email address for newsletter signup"
+                    aria-describedby={error ? 'email-error' : undefined}
+                    aria-invalid={error ? 'true' : 'false'}
                   />
                 </div>
                 <button 
@@ -150,8 +172,8 @@ export default function HeroEmailSignup() {
         </div>
       </div>
       {error && (
-        <div className="text-center">
-          <p className="text-sm text-red-300">
+        <div className="text-center" role="alert">
+          <p id="email-error" className="text-sm text-red-300">
             {error}
           </p>
         </div>
