@@ -1,14 +1,16 @@
-# Astro Starter Kit: Minimal
+# BioRunway Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+An Astro-based static site for biotech fashion content with Supabase email collection.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+**Live Site:** https://biorunway.com
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech Stack
+- **Framework**: Astro v5.10.0 with React v19.1.0 for interactive components
+- **Styling**: Tailwind CSS v4.1.8 (uses CSS variables system)
+- **Content**: Content Collections with Zod schema validation
+- **Backend**: Supabase for email list management
+- **Animation**: Framer Motion v12.16.0
+- **Deployment**: Netlify with custom domain
 
 ## 🚀 Project Structure
 

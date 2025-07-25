@@ -11,6 +11,8 @@ npm run preview  # Preview production build locally
 npm run astro    # Access Astro CLI commands
 ```
 
+**Live Site:** https://biorunway.com
+
 ## Architecture Overview
 
 **BioRunway Website** - Astro-based static site for biotech fashion content with Supabase email collection
@@ -142,8 +144,9 @@ PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ### Supabase Integration
 - Email collection managed through `src/lib/supabase.js`
-- Currently has RLS disabled (security ticket EMAIL-002 addresses this)
+- RLS policies enabled with secure error handling (BIO-17 completed)
 - EmailSignup component handles form submission and validation
+- **CORS Settings**: Ensure Supabase allows requests from biorunway.com domain
 
 ## SEO and Performance
 
